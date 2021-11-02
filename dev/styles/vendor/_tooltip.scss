@@ -1,0 +1,30 @@
+.tooltip {
+    position: fixed;
+    padding: 8px 11px 10px;
+    @include font-style(600,$fz_12px,$lh_16);
+    color: $color_white;
+    background: $color_9D5CD0;
+    z-index: 10;
+    max-width: 264px;
+    text-align: center;
+}
+
+.tooltip_trigger{
+    position: relative;
+    z-index: 10;
+    width: 16px;
+    height: 16px;
+    transform: translateY(-8px);
+}
+
+.project_tooltip{
+    position: relative;
+    display:inline-block;
+    transform: translateY(8px);
+}
+.tooltip_svg{
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left:0;
+}

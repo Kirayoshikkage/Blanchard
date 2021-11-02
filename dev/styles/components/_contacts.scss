@@ -1,0 +1,96 @@
+.contacts_title {
+    margin-bottom: 16px;
+}
+
+.contacts_content{
+    border-top: 1px solid #CACACA;
+    position: relative;
+}
+
+.contacts_grid{
+    display: flex;
+    min-height: 700px;
+}
+
+.contacts_item:first-child{
+    align-self: center;
+}
+
+.contacts_map{
+    position: absolute;
+    right: 0;
+    max-width: 1200px;
+}
+
+.contacts_address {
+    font-style: normal;
+    margin-bottom: 32px;
+}
+
+.contacts_subtitle {
+    margin-bottom: 0px;
+}
+
+.contacts_subtitle-weight {
+    font-weight: 400 !important;
+}
+
+.contacts_subtitle-margin{
+    margin-bottom: 20px;
+}
+
+.contacts_form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.contacts_svg{
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.contacts_btn {
+    align-self: flex-start;
+    padding: 15px 33px;
+    color: $color_9D5CD0 !important;
+}
+
+.contacts_input {
+    border: 1px solid #333333;
+    border-radius: 100px;
+    padding: 10px 24px;
+    margin-bottom: 23px;
+    min-width: 400px;
+}
+
+.contacts_input::placeholder {
+    @include font-style(400, $fz_16px, $lh_32, $color_999);
+}
+
+.contacts_address-media{
+    display: none;
+}
+
+[class*="-ground-pane"] {
+    filter: grayscale(100%);
+}
+[class*="ymaps-2-1-79-copyright"]{
+    display:none;
+}
+
+.contacts_label{
+    position: relative;
+}
+.js-validate-error-label {
+    @include font-style(400, $fz_12px, $lh_16, #D11616);
+    position: absolute;
+    left:10px;
+    top:-25%;
+    z-index: 10;
+    font-size: 10px;
+    transition: all .4s linear;
+}
+.ymaps-2-1-79-controls__control{
+    inset: 45px  auto auto 10px !important;
+}

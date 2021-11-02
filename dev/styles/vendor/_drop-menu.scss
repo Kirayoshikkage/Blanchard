@@ -1,0 +1,25 @@
+.drop-menu_list{
+    display: flex;
+    justify-content: space-between;
+}
+.sub-menu_list.open{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.drop-menu_item{
+    position: relative;
+}
+.drop-menu_link{
+    color: #000;
+}
+.sub-menu_list{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-30%);
+    position: absolute;
+}
+.sub-menu_link{
+    display: inline-block;
+    color:#fff;
+}

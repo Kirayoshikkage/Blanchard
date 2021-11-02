@@ -1,0 +1,21 @@
+.tabs_triggers,
+.сatalog_triggers{
+    display: flex;
+}
+.tabs_item,
+.сatalog_item,
+.tabs_item-italy{
+    display:none;
+    height: 100%;
+}
+.tabs_item-active,
+.сatalog_item-active,
+.tabs_active-italy{
+    display: block;
+}
+.tabs_item-france,
+.tabs_item-russia,
+.tabs_item-germany,
+.tabs_item-belgium{
+    height: 100%;
+}

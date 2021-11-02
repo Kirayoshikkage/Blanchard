@@ -1,0 +1,13 @@
+.about{
+    margin-bottom: 70px
+}
+.title{
+    @include font-style (400, $fz_48px, $lh_65,$color_black);
+    margin-bottom: 18px;
+}
+.text{
+    @include font-style (400, $fz_16px, $lh_32,$color_black);
+}
+.about_text{
+    max-width: 1080px;
+}

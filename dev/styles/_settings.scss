@@ -1,0 +1,48 @@
+//дфолтное обнуление
+html{
+    box-sizing: border-box;
+}
+
+*,h1,h2,h3,h4,h5,h6,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding:0;
+    margin:0;
+    outline:0;
+    border:0;
+}
+
+body,
+ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+    font-family: 'Open sans';
+}
+
+img{
+    max-width: 100%;
+}
+
+button,
+.overlay_input,
+.navigation_input{
+    background-color: transparent;
+    border:none;
+    outline: none;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    max-width: 1630px;
+    margin:0 auto;
+    padding:0 15px;
+}
+body.scroll-hidden{
+    overflow: hidden;
+}

@@ -1,0 +1,65 @@
+.developments {
+    margin-bottom: 80px;
+}
+
+.developments_title {
+    margin-bottom: 15px;
+}
+
+.developments_wrapper {
+    margin-bottom: 50px;
+}
+
+.developments_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.developments_item {
+    outline: 1px solid $color_CACACA;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.developments_content {
+    flex-grow: 2;
+    padding: 11px 20px 43px 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.developments_span {
+    display: block;
+    @include font-style(600, $fz_12px, $lh_16, $color_999);
+    text-align: end;
+}
+
+.developments_subtitle,
+.developments_span {
+    margin-bottom: 5px;
+}
+
+.developments_text {
+    color: $color_333;
+    flex-grow: 2;
+}
+
+.developments_link {
+    color: $color_9D5CD0;
+    border-bottom: 1px solid $color_9D5CD0;
+    align-self: flex-start;
+}
+
+.developments_item-hidden,
+.developments_points {
+    display: none;
+}
+
+.developments_btn {
+    display: block;
+    color: $color_9D5CD0;
+    padding: 15px 35px;
+    margin: 0 auto;
+}

@@ -1,0 +1,47 @@
+.slider,
+.hero_slider {
+    position: relative;
+    user-select: none;
+    touch-action: pan-y;
+}
+
+
+.slider img {
+    pointer-events: none;
+}
+
+.slider-list,
+.hero_list {
+    overflow: hidden;
+}
+
+.slider-list.grab,
+.hero_list.grab {
+    cursor: grab;
+}
+
+.slider-list.grabbing,
+.hero_list.grabbing {
+    cursor: grabbing;
+}
+
+
+.slider-arrows {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.next,
+.prev {
+    background: none;
+    border: none;
+    margin: 0 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.next.disabled,
+.prev.disabled {
+    opacity: .25;
+    pointer-events: none;
+}

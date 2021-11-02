@@ -1,0 +1,157 @@
+.menu_link{
+    @include font-style(600,$fz_18px,$lh_25)
+}
+
+.login{
+    @include font-style(400,$fz_18px,$lh_25);
+}
+
+.overlay_link{
+    @include font-style(400,$fz_18px,$lh_25);
+    &::before{
+        content:'';
+        position: absolute;
+        top:45%;
+        right:-20px;
+        width:12px;
+        height: 7px;
+        background: url(../img/header/menu.svg) no-repeat;
+        transition: transform .4s;
+    }
+}
+
+.drop-menu_link.active::before{
+    transform: rotate(180deg);
+}
+
+.overlay_btn{
+    margin-right: 10px;
+    transform: translateY(3px);
+}
+
+.overlay_input{
+    min-width: 218px;
+    cursor: text;
+}
+
+.search_label{
+    position: relative;
+    &::before{
+        content:'';
+        position: absolute;
+        bottom: -5px;
+        left:0;
+        width:100%;
+        border-bottom: 1px solid $color_white;
+    }
+}
+
+
+.overlay_input::placeholder{
+    @include font-style(400,$fz_18px,$lh_25);
+}
+
+.burger_icon,
+.navigation_btn,
+.navigation_search{
+    display:none
+}
+
+.navigation_btn{
+    z-index: 1;
+}
+
+.overlay_sub_list{
+    top:190%;
+    box-sizing: content-box;
+    border:40px solid $color_0_4black;
+    max-height: 220px;
+    min-width: 220px;
+    overflow-x: none; 
+    transition-property: transform,opacity,visibility;
+    transition-duration: 0.4s;
+}
+
+.overlay_sub_item{
+    position: relative;
+}
+
+.overlay_sub_item:not(:last-child){
+    &::after{
+        @include before(100%,0,0,0,100%,20px);
+        background-color: $color_0_4black;
+    }
+}
+
+.overlay_sub_item:not(:last-child){
+    margin-bottom: 20px;
+}
+
+.simplebar-scrollbar:before {
+    background: $color_white;
+    border-radius: 0px;
+    left:0;
+    right:0;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+    top:0;
+    bottom:0;
+}
+
+.simplebar-track.simplebar-vertical {
+    width: 2px;
+}
+
+.simplebar-track {
+    background-color: $color_black;
+    right:-20px;
+}
+
+
+.overlay_sub_link{
+    display: block;
+    padding:9px 12px 12px;
+}
+
+.login{
+    padding:0;
+}
+
+// потом 
+.overlay_search:hover,
+.search_label:focus{
+    .search_label::before{
+        border-color:$color_C283F3
+    }
+}
+.overlay_search:active{
+    .search_label::before{
+        border-color:$color_7943A4
+    }
+}
+.overlay_sub_link:hover{
+    &::after{
+        content:'';
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height: 100%;
+        border:2px solid black;
+    }
+}
+.menu_link,
+.drop-menu_link,
+.login{
+    &:hover{
+        color:$color_C283F3
+    }
+    &:active{
+        color:$color_7943A4
+    }
+    &:focus{
+        background-color: $color_7943A4;
+        color:$color_white
+    }
+}
