@@ -1,7 +1,7 @@
 .tooltip {
     position: fixed;
     padding: 8px 11px 10px;
-    @include font-style(600,$fz_12px,$lh_16);
+    @include font-style(600, $fz_12px, $lh_16);
     color: $color_white;
     background: $color_9D5CD0;
     z-index: 10;
@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-.tooltip_trigger{
+.tooltip_trigger {
     position: relative;
     z-index: 10;
     width: 16px;
@@ -17,14 +17,19 @@
     transform: translateY(-8px);
 }
 
-.project_tooltip{
+.project_tooltip {
     position: relative;
-    display:inline-block;
+    display: inline-block;
     transform: translateY(8px);
 }
-.tooltip_svg{
+
+.tooltip_icon {
     position: absolute;
     z-index: 1;
-    top:0;
-    left:0;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    stroke: $color_black;
+    fill: $color_white;
 }

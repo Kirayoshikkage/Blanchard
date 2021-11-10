@@ -1,54 +1,71 @@
-.navigation{
+.navigation {
     background-color: $color_black;
     position: relative;
 }
-.navigation_content{
+
+.navigation_content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding:29px 0 28px;
+    padding: 29px 0 28px;
 }
-.navigation_logo{
+
+.navigation_logo {
     margin-right: 19px;
 }
+
 .menu_list,
-.navigation_search{
+.navigation_search {
     display: flex;
 }
-.navigation_list{
+
+.navigation_list {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-auto-flow: row;
     margin-right: 139px;
 }
-.navigation_item:not(:last-child){
-    margin-right: 62px;
+
+.navigation_item:not(:last-child) {
+    margin-right: 52px;
 }
-.login{
+
+.login,
+.burger_login{
     position: relative;
-    &_icon{
-        fill:white;
+    z-index: 2;
+
+    &_icon {
+        fill: white;
         position: absolute;
-        left:-35%;
-        top:0;
+        left: -20%;
+        top: 0;
+        z-index: 2;
     }
 }
-.overlay{
-    width:100%;
+
+.overlay {
+    width: 100%;
     right: 0;
     position: absolute;
-    z-index: 2;
+    z-index: 100;
     background-color: rgba(0, 0, 0, 0.4);
 }
-.overlay_content{
+
+.overlay_content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:23px 0 23px;
+    padding: 23px 0 23px;
 }
-.overlay_search{
+
+.overlay_search {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
 }
-.overlay_item:not(:last-child){
-    margin-right: 113px;
+
+.overlay_item:not(:last-child) {
+    margin-right: 100px;
 }

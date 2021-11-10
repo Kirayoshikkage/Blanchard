@@ -1,157 +1,162 @@
-.menu_link{
-    @include font-style(600,$fz_18px,$lh_25)
+.menu_link {
+    @include font-style(600, $fz_18px, $lh_25);
 }
 
-.login{
-    @include font-style(400,$fz_18px,$lh_25);
+.login,
+.burger_login{
+    @include font-style(400, $fz_18px, $lh_25);
 }
 
-.overlay_link{
-    @include font-style(400,$fz_18px,$lh_25);
-    &::before{
-        content:'';
+.overlay_link {
+    @include font-style(400, $fz_18px, $lh_25);
+
+    &::before {
+        content: '';
         position: absolute;
-        top:45%;
-        right:-20px;
-        width:12px;
+        top: 45%;
+        right: -20px;
+        width: 12px;
         height: 7px;
         background: url(../img/header/menu.svg) no-repeat;
         transition: transform .4s;
+        z-index: 2;
     }
 }
 
-.drop-menu_link.active::before{
+.drop-menu_link.active::before {
     transform: rotate(180deg);
 }
 
-.overlay_btn{
+.overlay_link,
+.menu_link {
+    padding: 0 5px;
+}
+
+.overlay_btn {
     margin-right: 10px;
     transform: translateY(3px);
 }
 
-.overlay_input{
+.overlay_input {
+    color:$color_white;
     min-width: 218px;
     cursor: text;
 }
 
-.search_label{
+.search_label {
     position: relative;
-    &::before{
-        content:'';
+
+    &::before {
+        content: '';
         position: absolute;
         bottom: -5px;
-        left:0;
-        width:100%;
+        left: 0;
+        width: 100%;
         border-bottom: 1px solid $color_white;
     }
 }
 
 
-.overlay_input::placeholder{
-    @include font-style(400,$fz_18px,$lh_25);
+.overlay_input::placeholder {
+    @include font-style(400, $fz_18px, $lh_25);
 }
 
 .burger_icon,
 .navigation_btn,
-.navigation_search{
-    display:none
+.navigation_search {
+    display: none
 }
 
-.navigation_btn{
-    z-index: 1;
-}
-
-.overlay_sub_list{
-    top:190%;
-    box-sizing: content-box;
-    border:40px solid $color_0_4black;
-    max-height: 220px;
-    min-width: 220px;
-    overflow-x: none; 
-    transition-property: transform,opacity,visibility;
-    transition-duration: 0.4s;
-}
-
-.overlay_sub_item{
-    position: relative;
-}
-
-.overlay_sub_item:not(:last-child){
-    &::after{
-        @include before(100%,0,0,0,100%,20px);
-        background-color: $color_0_4black;
+.burger_icon,
+.search_btn,
+.navigation_btn,
+.burger_close,
+.search_close,
+.overlay_btn{
+    svg{
+        fill:#fff
     }
 }
 
-.overlay_sub_item:not(:last-child){
+.navigation_btn {
+    z-index: 1;
+}
+
+.overlay_sub_list {
+    padding: 0 40px;
+    top: 190%;
+    box-sizing: content-box;
+    background-color: rgba(0,0,0,0.6);
+    border-top: 40px solid rgba(0,0,0,0);
+    border-bottom: 40px solid rgba(0,0,0,0);
+    max-height: 220px;
+    min-width: 220px;
+    overflow-x: none;
+    transition-property: transform, opacity, visibility;
+    transition-duration: 0.4s;
+}
+
+.overlay_sub_item {
+    position: relative;
+}
+
+.overlay_sub_item:not(:last-child) {
     margin-bottom: 20px;
 }
 
 .simplebar-scrollbar:before {
     background: $color_white;
     border-radius: 0px;
-    left:0;
-    right:0;
+    left: 0;
+    right: 0;
 }
 
 .simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
-    top:0;
-    bottom:0;
+    top: 0;
+    bottom: 0;
 }
 
 .simplebar-track.simplebar-vertical {
     width: 2px;
+    height: 220px;
+}
+
+.simplebar-wrapper{
+    height: 220px;
 }
 
 .simplebar-track {
     background-color: $color_black;
-    right:-20px;
+    right: 10px;
 }
 
 
-.overlay_sub_link{
+.overlay_sub_link {
     display: block;
-    padding:9px 12px 12px;
+    padding: 9px 12px 12px;
 }
 
-.login{
-    padding:0;
+.overlay_sub_item:nth-child(4n+1) {
+    background: url(../img/header/1.webp);
 }
 
-// потом 
-.overlay_search:hover,
-.search_label:focus{
-    .search_label::before{
-        border-color:$color_C283F3
-    }
+.overlay_sub_item:nth-child(4n+2) {
+    background: url(../img/header/2.webp);
 }
-.overlay_search:active{
-    .search_label::before{
-        border-color:$color_7943A4
-    }
+
+.overlay_sub_item:nth-child(4n+3) {
+    background: url(../img/header/3.webp);
 }
-.overlay_sub_link:hover{
-    &::after{
-        content:'';
-        position: absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height: 100%;
-        border:2px solid black;
-    }
+
+.overlay_sub_item:nth-child(4n+4) {
+    background: url(../img/header/4.webp);
 }
-.menu_link,
-.drop-menu_link,
-.login{
-    &:hover{
-        color:$color_C283F3
-    }
-    &:active{
-        color:$color_7943A4
-    }
-    &:focus{
-        background-color: $color_7943A4;
-        color:$color_white
-    }
+
+.login,
+.burger_login{
+    padding: 0 5px;
+}
+
+.header_svg {
+    fill: #CACACA
 }

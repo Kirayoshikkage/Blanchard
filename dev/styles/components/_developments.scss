@@ -52,8 +52,11 @@
     align-self: flex-start;
 }
 
-.developments_item-hidden,
-.developments_points {
+.developments_points{
+    display: none;
+}
+
+.developments_item-hidden{
     display: none;
 }
 

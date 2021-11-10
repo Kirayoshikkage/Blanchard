@@ -1,27 +1,32 @@
-.select{
+.select {
     max-width: 400px;
     position: relative;
 }
-.select__header{
+
+.select__header {
+    width: 100%;
     position: relative;
-    display:flex;
+    display: flex;
     border: 1px solid #fff;
     cursor: pointer;
     align-items: center;
     border-radius: 6px;
 }
-.select.is-active .select__body{
+
+.select.is-active .select__body {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
 }
-.select__current{
-    padding:0px 15px;
+
+.select__current {
+    padding: 0px 15px;
     @include font-style (400, $fz_16px, $lh_32)
 }
-.select__icon{
+
+.select__icon {
     align-items: center;
-    display:flex;
+    display: flex;
     justify-content: center;
     height: 40px;
     width: 40px;
@@ -29,7 +34,8 @@
     flex-shrink: 0;
     margin-left: auto;
 }
-.select__body{
+
+.select__body {
     opacity: 0;
     transform: translateY(-30px);
     visibility: hidden;
@@ -38,27 +44,38 @@
     border-top: 0;
     left: 0;
     position: absolute;
-    right:0;
-    top:100%;
-    transition-property:opacity,transform,visibility;
+    right: 0;
+    top: 100%;
+    transition-property: opacity, transform, visibility;
     transition-duration: .4s;
     overflow: hidden;
 }
-.select__item{
-    padding:8px;
+
+.select__item {
+    display: block;
+    width: 100%;
+    padding: 8px;
     cursor: pointer;
-    @include font-style (400, $fz_16px, $lh_32)
+    text-align: start;
+    @include font-style (400, $fz_16px, $lh_32, #999999)
 }
-.select__item:not(:last-child){
+
+.select__item:not(:last-child) {
     border-bottom: 1px solid #fff;
 }
-.select__item:hover{
+
+.select__item:hover,
+.select__item:focus {
+    color: $color_white;
     background-color: rgba(255, 255, 255, 0.2);
 }
-.select__header:hover{
+
+.select__header:hover,
+.select__header:focus {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 6px;
 }
-.hidden{
-    display:none;
+
+.hidden {
+    display: none;
 }

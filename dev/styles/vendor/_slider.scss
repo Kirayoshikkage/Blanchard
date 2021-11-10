@@ -1,5 +1,4 @@
-.slider,
-.hero_slider {
+.slider {
     position: relative;
     user-select: none;
     touch-action: pan-y;
@@ -10,18 +9,15 @@
     pointer-events: none;
 }
 
-.slider-list,
-.hero_list {
+.slider-list {
     overflow: hidden;
 }
 
-.slider-list.grab,
-.hero_list.grab {
+.slider-list.grab {
     cursor: grab;
 }
 
-.slider-list.grabbing,
-.hero_list.grabbing {
+.slider-list.grabbing {
     cursor: grabbing;
 }
 

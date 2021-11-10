@@ -16,6 +16,7 @@
 }
 
 .project_img {
+    opacity: 0.5;
     filter: grayscale(100%);
 }
 
@@ -47,13 +48,6 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-}
-
-.project_prev,
-.project_next {
-    background-color: $color_E5E5E5;
-    color: $color_black;
-    margin: 0;
 }
 
 .project_subtitle {

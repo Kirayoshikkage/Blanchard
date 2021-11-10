@@ -1,19 +1,23 @@
-.footer{
+.footer {
     background-color: $color_black;
 }
+
 .footer_content,
-.socials_list{
+.socials_list {
     display: flex;
 }
-.footer_content{
+
+.footer_content {
     justify-content: space-between;
     align-items: center;
-    padding:46px 0;
+    padding: 46px 0;
 }
-.socials_item:not(:last-child){
+
+.socials_item:not(:last-child) {
     margin-right: 20px;
 }
-.socials_svg{
+
+.socials_svg {
     width: 45px;
     height: 45px;
 }

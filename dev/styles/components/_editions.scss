@@ -1,4 +1,4 @@
-.editions_header-hidden{
+.editions_header-hidden {
     display: none;
 }
 
@@ -32,7 +32,7 @@
 .editions_label,
 .editions_label-color,
 .text-color,
-.editions_current{
+.editions_current {
     color: $color_white
 }
 
@@ -50,7 +50,7 @@
     flex-direction: column;
 }
 
-.editions_label{
+.editions_label {
     position: relative;
     padding-left: 25px;
     cursor: pointer;
@@ -75,8 +75,8 @@
 .editions_span::before {
     content: ".";
     position: absolute;
-    left: 13%;
-    bottom: -22%;
+    left: 1px;
+    bottom: -2px;
     color: $color_C283F3;
     opacity: 0;
     transition: opacity .3s;

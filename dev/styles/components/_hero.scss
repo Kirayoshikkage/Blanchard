@@ -1,24 +1,24 @@
-.lead{
+.lead {
     @include font-style(700, 72px, 83px);
     max-width: 597px;
     margin-bottom: 20px;
 }
-.hero_desc{
+
+.hero_desc {
     @include font-style(700, 18px, 30px);
     max-width: 579px;
-    margin-bottom: 112px;
+    margin-bottom: 85px;
 }
-.btn{
+
+.btn {
     @include font-style(700, 18px, 25px);
     border: 2px solid $color_9D5CD0;
     border-radius: 100px;
 }
-.hero_btn{
+
+.hero_btn {
+    display: inline-block;
     background-color: $color_9D5CD0;
-    padding:22.5px 35px
-}
-.hero_slide{
-    max-width: 100vw;
-    width:100%;
-    height: 700px;
+    padding: 22.5px 35px;
+    margin-bottom: 20px;
 }
