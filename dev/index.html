@@ -372,16 +372,19 @@
                         <div class="gallery_select select">
                             <button class="select__header">
                                 <span class="select__current">Живопись</span>
-                                <div class="select__icon"><svg width="12" height="7" viewbox="0 0 12 7" fill="none"
+                                <div class="select__icon">
+                                    <svg width="12" height="7" viewbox="0 0 12 7" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M11 1L6 6L1 1" stroke="white" />
                                     </svg>
                                 </div>
                             </button>
                             <div class="select__body">
-                                <button class="select__item hidden">Живопись</button>
-                                <button class="select__item">Рисунок</button>
-                                <button class="select__item">Скульптура</button>
+                                <div class="select_content">
+                                    <button class="select__item hidden">Живопись</button>
+                                    <button class="select__item">Рисунок</button>
+                                    <button class="select__item">Скульптура</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2329,143 +2332,153 @@
                 <div class="developments_wrapper developments_slider">
                     <div class="developments_cards developments_list">
                         <div class="developments_grid developments_track">
-                            <div class="developments_item developments_slide">
-                                <picture>
-                                    <source media="(min-width: 1201px)" srcset="./img/developments/1.webp">
-                                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                                        srcset="./img/developments/1_middle.webp">
-                                    <source media="(max-width:1023px) and (min-width: 768px)"
-                                        srcset="./img/developments/1_min.webp">
-                                    <source media="(max-width:767px) and (min-width: 0px)"
-                                        srcset="./img/developments/1_middle.webp">
-                                    <img src="./img/developments/1.webp" alt="">
-                                </picture>
-                                <div class="developments_content">
-                                    <span class="developments_span">
-                                        Музей им. Щусевa <br>
-                                        с 20 марта по 30 апреля
-                                    </span>
-                                    <h3 class="subtitle developments_subtitle">
-                                        Книжная гравюра в живом восприятии
-                                    </h3>
-                                    <p class="text developments_text">
-                                        Один из ведущих флорентийских художников Кватроченто, основатель художественной
-                                        династии, которую продолжили его брат Давид и сын Ридольфо
-                                    </p>
-                                    <a class="text developments_link" href="#">
-                                        Подробнее
-                                    </a>
+                            <div class="developments_item developments_slide" data-open="true">
+                                <div class="developments_body">
+                                    <picture>
+                                        <source media="(min-width: 1201px)" srcset="./img/developments/1.webp">
+                                        <source media="(max-width:1200px) and (min-width: 1024px)"
+                                            srcset="./img/developments/1_middle.webp">
+                                        <source media="(max-width:1023px) and (min-width: 768px)"
+                                            srcset="./img/developments/1_min.webp">
+                                        <source media="(max-width:767px) and (min-width: 0px)"
+                                            srcset="./img/developments/1_middle.webp">
+                                        <img src="./img/developments/1.webp" alt="">
+                                    </picture>
+                                    <div class="developments_content">
+                                        <span class="developments_span">
+                                            Музей им. Щусевa <br>
+                                            с 20 марта по 30 апреля
+                                        </span>
+                                        <h3 class="subtitle developments_subtitle">
+                                            Книжная гравюра в живом восприятии
+                                        </h3>
+                                        <p class="text developments_text">
+                                            Один из ведущих флорентийских художников Кватроченто, основатель художественной
+                                            династии, которую продолжили его брат Давид и сын Ридольфо
+                                        </p>
+                                        <a class="text developments_link" href="#">
+                                            Подробнее
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="developments_item developments_slide" data-open="true">
+                                <div class="developments_body">
+                                    <picture>
+                                        <source media="(min-width: 1201px)" srcset="./img/developments/2.webp">
+                                        <source media="(max-width:1200px) and (min-width: 1024px)"
+                                            srcset="./img/developments/2_middle.webp">
+                                        <source media="(max-width:1023px) and (min-width: 768px)"
+                                            srcset="./img/developments/2_min.webp">
+                                        <source media="(max-width:767px) and (min-width: 0px)"
+                                            srcset="./img/developments/2_middle.webp">
+                                        <img src="./img/developments/2.webp" alt="">
+                                    </picture>
+                                    <div class="developments_content">
+                                        <span class="developments_span">
+                                            ММОМА <br>
+                                            24 марта 19:00
+                                        </span>
+                                        <h3 class="subtitle developments_subtitle">
+                                            «Открытая дискуссия». Дмитрий Петров и Сергей Ильин.
+                                        </h3>
+                                        <p class="text developments_text">
+                                            Высокий уровень вовлечения представителей целевой аудитории является четким
+                                            доказательством простого факта.
+                                        </p>
+                                        <a class="text developments_link" href="#">
+                                            Подробнее
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="developments_item developments_slide" data-open="true">
+                                <div class="developments_body">
+                                    <picture>
+                                        <source media="(min-width: 1201px)" srcset="./img/developments/3.webp">
+                                        <source media="(max-width:1200px) and (min-width: 1024px)"
+                                            srcset="./img/developments/3_middle.webp">
+                                        <source media="(max-width:1023px) and (min-width: 768px)"
+                                            srcset="./img/developments/3_min.webp">
+                                        <source media="(max-width:767px) and (min-width: 0px)"
+                                            srcset="./img/developments/3_middle.webp">
+                                        <img src="./img/developments/3.webp" alt="">
+                                    </picture>
+                                    <div class="developments_content">
+                                        <span class="developments_span">
+                                            Еврейский музей <br>
+                                            с 31 марта по 21 апреля
+                                        </span>
+                                        <h3 class="subtitle developments_subtitle">
+                                            Выставка «Формация 2020»
+                                        </h3>
+                                        <p class="text developments_text">
+                                            Идейные соображения высшего порядка, а также современная методология разработки
+                                            играет важную роль в формировании глубокомысленных рассуждений.
+                                        </p>
+                                        <a class="text developments_link" href="#">
+                                            Подробнее
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="developments_item developments_slide">
-                                <picture>
-                                    <source media="(min-width: 1201px)" srcset="./img/developments/2.webp">
-                                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                                        srcset="./img/developments/2_middle.webp">
-                                    <source media="(max-width:1023px) and (min-width: 768px)"
-                                        srcset="./img/developments/2_min.webp">
-                                    <source media="(max-width:767px) and (min-width: 0px)"
-                                        srcset="./img/developments/2_middle.webp">
-                                    <img src="./img/developments/2.webp" alt="">
-                                </picture>
-                                <div class="developments_content">
-                                    <span class="developments_span">
-                                        ММОМА <br>
-                                        24 марта 19:00
-                                    </span>
-                                    <h3 class="subtitle developments_subtitle">
-                                        «Открытая дискуссия». Дмитрий Петров и Сергей Ильин.
-                                    </h3>
-                                    <p class="text developments_text">
-                                        Высокий уровень вовлечения представителей целевой аудитории является четким
-                                        доказательством простого факта.
-                                    </p>
-                                    <a class="text developments_link" href="#">
-                                        Подробнее
-                                    </a>
+                                <div class="developments_body">
+                                    <picture>
+                                        <source media="(min-width: 1201px)" srcset="./img/developments/4.webp">
+                                        <source media="(max-width:1200px) and (min-width: 1024px)"
+                                            srcset="./img/developments/4_middle.webp">
+                                        <source media="(max-width:1023px) and (min-width: 768px)"
+                                            srcset="./img/developments/4_min.webp">
+                                        <source media="(max-width:767px) and (min-width: 0px)"
+                                            srcset="./img/developments/4_middle.webp">
+                                        <img src="./img/developments/4.webp" alt="">
+                                    </picture>
+                                    <div class="developments_content">
+                                        <span class="developments_span">
+                                            Третьяковка на Крымском валу <br>
+                                            с 30 марта по 30 апреля
+                                        </span>
+                                        <h3 class="subtitle developments_subtitle">
+                                            XXIV Международная биеннале молодого искусства
+                                        </h3>
+                                        <p class="text developments_text">
+                                            Внезапно, реплицированные с зарубежных источников, современные исследования.
+                                        </p>
+                                        <a class="text developments_link" href="#">
+                                            Подробнее
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="developments_item developments_slide">
-                                <picture>
-                                    <source media="(min-width: 1201px)" srcset="./img/developments/3.webp">
-                                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                                        srcset="./img/developments/3_middle.webp">
-                                    <source media="(max-width:1023px) and (min-width: 768px)"
-                                        srcset="./img/developments/3_min.webp">
-                                    <source media="(max-width:767px) and (min-width: 0px)"
-                                        srcset="./img/developments/3_middle.webp">
-                                    <img src="./img/developments/3.webp" alt="">
-                                </picture>
-                                <div class="developments_content">
-                                    <span class="developments_span">
-                                        Еврейский музей <br>
-                                        с 31 марта по 21 апреля
-                                    </span>
-                                    <h3 class="subtitle developments_subtitle">
-                                        Выставка «Формация 2020»
-                                    </h3>
-                                    <p class="text developments_text">
-                                        Идейные соображения высшего порядка, а также современная методология разработки
-                                        играет важную роль в формировании глубокомысленных рассуждений.
-                                    </p>
-                                    <a class="text developments_link" href="#">
-                                        Подробнее
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="developments_item developments_slide developments_item-hidden">
-                                <picture>
-                                    <source media="(min-width: 1201px)" srcset="./img/developments/4.webp">
-                                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                                        srcset="./img/developments/4_middle.webp">
-                                    <source media="(max-width:1023px) and (min-width: 768px)"
-                                        srcset="./img/developments/4_min.webp">
-                                    <source media="(max-width:767px) and (min-width: 0px)"
-                                        srcset="./img/developments/4_middle.webp">
-                                    <img src="./img/developments/4.webp" alt="">
-                                </picture>
-                                <div class="developments_content">
-                                    <span class="developments_span">
-                                        Третьяковка на Крымском валу <br>
-                                        с 30 марта по 30 апреля
-                                    </span>
-                                    <h3 class="subtitle developments_subtitle">
-                                        XXIV Международная биеннале молодого искусства
-                                    </h3>
-                                    <p class="text developments_text">
-                                        Внезапно, реплицированные с зарубежных источников, современные исследования.
-                                    </p>
-                                    <a class="text developments_link" href="#">
-                                        Подробнее
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="developments_item developments_slide developments_item-hidden">
-                                <picture>
-                                    <source media="(min-width: 1201px)" srcset="./img/developments/5.webp">
-                                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                                        srcset="./img/developments/5_middle.webp">
-                                    <source media="(max-width:1023px) and (min-width: 768px)"
-                                        srcset="./img/developments/5_min.webp">
-                                    <source media="(max-width:767px) and (min-width: 0px)"
-                                        srcset="./img/developments/5_middle.webp">
-                                    <img src="./img/developments/5.webp" alt="">
-                                </picture>
-                                <div class="developments_content">
-                                    <span class="developments_span">
-                                        ММАМ <br>
-                                        с 8 апреля по 20 мая
-                                    </span>
-                                    <h3 class="subtitle developments_subtitle">
-                                        Джон Винзор. Фотографии из серии «Метафора серебра»
-                                    </h3>
-                                    <p class="text developments_text">
-                                        Один из ведущих флорентийских художников Кватроченто, основатель художественной
-                                        династии, которую продолжили его брат Давид и сын Ридольфо
-                                    </p>
-                                    <a class="text developments_link" href="#">
-                                        Подробнее
-                                    </a>
+                                <div class="developments_body">
+                                    <picture>
+                                        <source media="(min-width: 1201px)" srcset="./img/developments/5.webp">
+                                        <source media="(max-width:1200px) and (min-width: 1024px)"
+                                            srcset="./img/developments/5_middle.webp">
+                                        <source media="(max-width:1023px) and (min-width: 768px)"
+                                            srcset="./img/developments/5_min.webp">
+                                        <source media="(max-width:767px) and (min-width: 0px)"
+                                            srcset="./img/developments/5_middle.webp">
+                                        <img src="./img/developments/5.webp" alt="">
+                                    </picture>
+                                    <div class="developments_content">
+                                        <span class="developments_span">
+                                            ММАМ <br>
+                                            с 8 апреля по 20 мая
+                                        </span>
+                                        <h3 class="subtitle developments_subtitle">
+                                            Джон Винзор. Фотографии из серии «Метафора серебра»
+                                        </h3>
+                                        <p class="text developments_text">
+                                            Один из ведущих флорентийских художников Кватроченто, основатель художественной
+                                            династии, которую продолжили его брат Давид и сын Ридольфо
+                                        </p>
+                                        <a class="text developments_link" href="#">
+                                            Подробнее
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2510,7 +2523,7 @@
                         <h2 class="title editions_title">
                             Издания
                         </h2>
-                        <div class="editions_select">
+                        <div class="editions_select" data-open="false">
                             <div class="editions_header">
                                 <span class="editions_current editions_subtitle text">Категории</span>
                                 <div class="editions_icon editions_header-hidden">

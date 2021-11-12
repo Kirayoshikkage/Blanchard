@@ -327,7 +327,7 @@
     }
 
     .hero_content{
-        padding-top: 112px;
+        padding-top: 103px;
     }
     
     .hero{
@@ -376,7 +376,7 @@
 
     /***************************developments***************************/
     .developments_grid {
-        gap: 30px;
+        gap: 50px 30px;
     }
 
     .developments_content {
@@ -385,11 +385,6 @@
 
     .developments_text {
         max-width: 222px;
-    }
-
-    .developments_item {
-        min-height: 683px;
-        max-width: 317px;
     }
 
     /***************************editions***************************/
@@ -507,11 +502,6 @@
     .gallery_text {
         max-width: 100%;
     }
-
-    .select.is-active .select__body {
-        position: relative;
-    }
-
     .gallery_select {
         max-width: 280px;
     }
@@ -596,6 +586,10 @@
         margin-right: 53px;
     }
 
+    .accordion_body{
+        padding:23px 0 21px 0;
+    }
+
     .catalog_item-one {
         order: 2;
         margin-top: 50px
@@ -605,7 +599,7 @@
         grid-template-columns: auto;
         grid-template-rows: repeat(9, auto);
         grid-auto-flow: column;
-        column-gap: 59px;
+        column-gap: 57px;
     }
 
     .сatalog_txt {
@@ -615,11 +609,19 @@
     .editions {
         background-image: url(../img/editions/background_min.webp);
     }
+    .editions_title{
+        margin-bottom: 18px;
+    }
     /***************************developments***************************/
     .developments_grid {
         grid-template-columns: repeat(2, 1fr);
+        row-gap: 27px;
     }
-
+    .developments_body{
+        img{
+            width: 100%;
+        }
+    }
     .developments_subtitle {
         max-width: 252px;
     }
@@ -730,7 +732,7 @@
     }
 
     .hero_content {
-        padding-top: 35px;
+        padding-top: 25px;
         flex-direction: column;
     }
 
@@ -888,7 +890,7 @@
     }
 
     .accordion_trigger {
-        padding: 20px 0;
+        padding: 19.5px 0;
     }
 
     .accordion_body {
@@ -937,15 +939,22 @@
 
     /***************************developments***************************/
     .developments {
-        margin-bottom: 45px;
-    }
-
-    .developments_item-hidden{
-        display: flex;
+        margin-bottom: 47px;
     }
 
     .developments_wrapper {
         margin-bottom: 0;
+    }
+
+    .developments_body{
+        min-height: 683px;
+        opacity: 1;
+        overflow: visible;
+        max-height: auto;
+        transition: none;
+        max-width: 100%;
+        align-items: center;
+        outline: 0px solid $color_CACACA;
     }
 
     .developments_grid {
@@ -959,12 +968,6 @@
     .developments_subtitle {
         max-width: 252px;
         margin-bottom: 35px;
-    }
-
-    .developments_item {
-        max-width: 100%;
-        align-items: center;
-        outline: 0px solid $color_CACACA;
     }
 
     .developments_content {
@@ -1044,7 +1047,7 @@
 
     .editions_title {
         color: $color_white;
-        margin-bottom: 10px;
+        margin-bottom:12px;
     }
 
     .editions_header {
@@ -1056,14 +1059,6 @@
         z-index: 2;
         justify-content: center;
         align-items: center;
-    }
-
-    .editions_body.is-active .editions_label,
-    .editions_label.selected {
-        opacity: 1;
-        visibility: visible;
-        z-index: 1;
-        display: block;
     }
 
     .editions_current {
@@ -1078,12 +1073,10 @@
         width: 12px;
         flex-shrink: 0;
         margin-left: auto;
-        transition: transform .2s;
+        transition: transform .4s;
     }
 
     .editions_body {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-        height: auto;
         left: 0;
         position: relative;
         right: 0;
@@ -1092,11 +1085,11 @@
     }
 
     .editions_label {
-        z-index: -1;
-        opacity: 0;
-        display: none;
-        visibility: hidden;
-        margin: 3px 0;
+        box-sizing: content-box;
+        max-height: 0;
+        margin-top:6px;
+        padding-bottom:6px;
+        overflow: hidden;
     }
 
     .editions_icon.active {
@@ -1136,8 +1129,7 @@
     }
 
     .editions_arrows,
-    .editions_counter,
-    .editions_body.is-active .editions_label.selected {
+    .editions_counter{
         display: none;
     }
 

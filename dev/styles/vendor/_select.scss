@@ -3,6 +3,12 @@
     position: relative;
 }
 
+.select[data-open="true"]{
+    .select__icon{
+        transform: rotate(180deg);
+    }
+}
+
 .select__header {
     width: 100%;
     position: relative;
@@ -11,12 +17,6 @@
     cursor: pointer;
     align-items: center;
     border-radius: 6px;
-}
-
-.select.is-active .select__body {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
 }
 
 .select__current {
@@ -33,22 +33,19 @@
     text-align: center;
     flex-shrink: 0;
     margin-left: auto;
+    transition: transform .4s;
 }
 
 .select__body {
-    opacity: 0;
-    transform: translateY(-30px);
-    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s;
+}
+
+.select_content{
     border: 1px solid #fff;
     border-radius: 6px;
     border-top: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    transition-property: opacity, transform, visibility;
-    transition-duration: .4s;
-    overflow: hidden;
 }
 
 .select__item {
@@ -65,17 +62,19 @@
 }
 
 .select__item:hover,
-.select__item:focus {
+.select__item:focus,
+.select__item:hover:active {
     color: $color_white;
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 .select__header:hover,
-.select__header:focus {
+.select__header:focus,
+.select__header:active {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 6px;
 }
 
-.hidden {
+.hidden{
     display: none;
 }

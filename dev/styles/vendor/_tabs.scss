@@ -6,14 +6,14 @@
 .tabs_item,
 .сatalog_item,
 .tabs_item-italy {
-    display: none;
+    display: none !important;
     height: 100%;
 }
 
 .tabs_item-active,
 .сatalog_item-active,
 .tabs_active-italy {
-    display: block;
+    display: block !important; 
 }
 
 .tabs_item-france,

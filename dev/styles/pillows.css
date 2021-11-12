@@ -23,7 +23,7 @@
   display: grid;
   grid-template-columns: repeat(7, auto);
   grid-auto-flow: row;
-  margin-right: 139px;
+  margin-right: 129px;
 }
 
 .navigation_item:not(:last-child) {
@@ -42,6 +42,13 @@
   left: -20%;
   top: 0;
   z-index: 2;
+}
+
+.overlay_link,
+.menu_link,
+.login,
+.burger_login {
+  padding: 0 5px;
 }
 
 .overlay {

@@ -548,217 +548,296 @@ function editionsFocus(index, element) {
     }
 }
 
-//
+// selectmenu
 
-let select = function () {
-    let selectHeader = document.querySelectorAll('.select__header'),
-        selectItem = document.querySelectorAll('.select__item'),
-        selecteditem = document.querySelector('.select__current').textContent
+let selectMenu = document.querySelectorAll('.select'),
+    selectItem = document.querySelectorAll('.select__item'),
+    selecteditem = document.querySelector('.select__current').textContent
 
-    selectHeader.forEach(item => {
-        item.addEventListener('click', selectToggle)
-    });
+selectMenu.forEach((item) => {
+    let selectTrigger = item.querySelector('.select__header'),
 
-    function selectToggle() {
-        this.parentElement.classList.toggle('is-active');
-    }
+        content = item.querySelector('.select__body')
 
-    selectItem.forEach(item => {
-        item.addEventListener('click', selectChoose)
-        item.addEventListener('click', hideselected)
-    });
-
-
-    function hideselected() {
-        let selitem = document.querySelector('.hidden');
-        selitem.classList.remove('hidden')
-        this.classList.add('hidden');
-    }
-
-    function selectChoose() {
-        let text = this.innerText,
-            select = this.closest('.select'),
-            currentText = select.querySelector('.select__current')
-        currentText.innerText = text;
-        select.classList.remove('is-active')
-
-    }
-
-};
-
-select();
-
-//editions-select
-const editionsHeader = document.querySelector('.editions_header')
-const editionsBody = document.querySelector('.editions_body')
-const editionsItem = document.querySelectorAll('.editions_label')
-const editionsIcon = document.querySelector('.editions_icon')
-
-editionsHeader.addEventListener('click', function () {
-    if (body < 768) {
-        editionsBody.classList.toggle('is-active')
-        editionsIcon.classList.toggle('active')
-    }
-})
-editionsItem.forEach((item) => {
-    if (body < 768) {
-        item.addEventListener('change', function () {
-            item.classList.toggle('selected')
-            item.classList.toggle('editions_label-active')
-        })
-    }
+    selectTrigger.addEventListener('click', function (e) {
+        if (item.dataset.open == 'true') {
+            item.dataset.open = 'false'
+            content.style.maxHeight = `0`
+        } else {
+            item.dataset.open = 'true'
+            content.style.maxHeight = `${content.scrollHeight}px`
+        }
+    })
 })
 
-//editions-input
+selectItem.forEach(item => {
+    item.addEventListener('click', selectChoose)
+    item.addEventListener('click', hideselected)
+});
 
-if (body >= 768) {
-    const editionsInput = document.querySelectorAll('.editions_input')
-    const editionsLabel = document.querySelectorAll('.editions_label ')
-    editionsInput.forEach((item) => {
-        item.addEventListener('click', function () {
-            let parent = item.closest('.editions_label')
-            parent.classList.toggle('editions_label-active')
-        })
-    })
-
-    editionsLabel.forEach((item) => {
-        item.addEventListener('keydown', function (e) {
-            if (e.keyCode == 13) {
-                let child = item.querySelector('.editions_input')
-                child.toggleAttribute('checked')
-                let parent = item.closest('.editions_label')
-                parent.classList.toggle('editions_label-active')
-            }
-        })
-    })
+function hideselected() {
+    let selitem = document.querySelector('.hidden');
+    selitem.classList.remove('hidden')
+    this.classList.add('hidden');
 }
 
-//editions-grid 
+function selectChoose() {
+    let text = this.innerText,
+        select = this.closest('.select'),
+        content = select.querySelector('.select__body')
+    currentText = select.querySelector('.select__current')
+    currentText.innerText = text;
+    select.dataset.open = 'false'
+    content.style.maxHeight = `0`
+}
 
+    let editionsHeader = document.querySelector('.editions_header'),
+    editionsItem = document.querySelectorAll('.editions_label'),
+    editionsSelect = document.querySelector('.editions_select'),
+    editionsIcon = document.querySelector('.editions_icon')
+
+    function selectActive(){
+        if (body > 768){
+            editionsItem.forEach(item => {
+                editionsSelected(item, 0, 0)
+                item.style.maxHeight = `${item.scrollHeight}px`
+            })
+            return
+        }
+        if (editionsSelect.dataset.open == 'false') {
+            editionsSelectOpen()
+        } else {
+            editionsSelectClose()
+        }
+    }
+
+
+    function editionsSelected(item, m, border) {
+        item.style.transitionProperty = 'max-height, border-bottom, margin-top, padding-bottom'
+        item.style.transitionDuration = '0.4s;'
+        item.style.marginTop = `${m}px`
+        item.style.paddingBottom = `${m}px`
+        item.style.borderBottom = `${border}px solid rgba(253, 253, 253, 0.5)`
+    }
+
+    function editionsSelectClose(){
+        if (body > 768){
+            editionsItem.forEach(item => {
+                editionsSelected(item, 0, 0)
+                item.style.maxHeight = `${item.scrollHeight}px`
+            })
+            return
+        }
+        editionsIcon.classList.toggle('active')
+        editionsSelect.dataset.open = 'false'
+        editionsItem.forEach(item => {
+            if (item.classList.contains('selected')) {
+                editionsSelected(item, 4, 1)
+                item.style.maxHeight = `${item.scrollHeight}px`
+            } else {
+                editionsSelected(item, 0, 0)
+                item.style.maxHeight = `0`
+            }
+        })
+    }
+
+    function editionsSelectOpen(){
+        editionsIcon.classList.toggle('active')
+        editionsSelect.dataset.open = 'true'
+        editionsItem.forEach(item => {
+            if (!item.classList.contains('selected')) {
+                item.style.maxHeight = `${item.scrollHeight}px`
+                editionsSelected(item, 4, 1)
+            } else {
+                item.style.maxHeight = `0`
+                editionsSelected(item, 0, 0)
+            }
+        })
+    }
+
+    if (body < 768) {
+        editionsSelectClose()
+        editionsHeader.addEventListener('click', selectActive)
+    }
+
+//editions-input
+const editionsInput = document.querySelectorAll('.editions_input')
+const editionsLabel = document.querySelectorAll('.editions_label ')
+
+editionsInput.forEach((item) => {
+    item.addEventListener('click', function () {
+        let parent = item.closest('.editions_label')
+        parent.classList.toggle('editions_label-active')
+        parent.classList.toggle('selected')
+    })
+})
+
+editionsLabel.forEach((item) => {
+    item.addEventListener('keydown', function (e) {
+        if (e.keyCode == 13) {
+            let child = item.querySelector('.editions_input')
+            child.toggleAttribute('checked')
+            let parent = item.closest('.editions_label')
+            parent.classList.toggle('editions_label-active')
+            parent.classList.toggle('selected')
+        }
+    })
+})
+//editions-grid 
 editionsItem.forEach((item, index) => {
     item.classList.add(`editions_label-${index}`)
 })
 
 //akkordion
-const smoothHeight = (itemSelector, buttonSelector, contentSelector) => { 
+const smoothHeight = (itemSelector, buttonSelector, contentSelector) => {
 
-        const items = document.querySelectorAll(itemSelector)
-        const itemFocus = document.querySelectorAll('.accordion_link-focus')
+    const items = document.querySelectorAll(itemSelector)
+    const itemFocus = document.querySelectorAll('.accordion_link-focus')
 
-        function focus(itemFocus,tabindex){
-            itemFocus.forEach((item) => {
-                item.setAttribute('tabindex', tabindex);
-            })
-        }
-
-        if (!items.length) return 
-
-        items.forEach(el => { 
-            const button = el.querySelector(buttonSelector) 
-            const content = el.querySelector(contentSelector)
-            const ifocus = el.querySelectorAll('.accordion_link-focus')
-
-            focus(ifocus,-1)
-
-            if (el.dataset.open == 'true'){
-                el.dataset.open = 'true'
-                content.style.maxHeight = `${content.scrollHeight}px`
-                focus(ifocus,0)
-            }
-
-            button.addEventListener('click', () => {
-                if (el.dataset.open !== 'true') {
-                    items.forEach((item) => {
-                        let content = item.querySelector(contentSelector)
-                        let itemfocus = item.querySelectorAll('.accordion_link-focus')
-                        if(item.dataset.open == 'true'){
-                            focus(itemfocus,-1)
-                            item.dataset.open = 'false'
-                            content.style.maxHeight = ''
-                        }
-                    })
-                    el.dataset.open = 'true'
-                    content.style.maxHeight = `${content.scrollHeight}px`
-                    focus(ifocus,0)
-                } else {
-                    el.dataset.open = 'false'
-                    content.style.maxHeight = ''
-                    focus(ifocus,-1)
-                }
-            })
-
-            const onResize = () => { 
-                if (el.dataset.open === 'true') { 
-                    if (parseInt(content.style.maxHeight) !== content.scrollHeight) { 
-                        content.style.maxHeight = `${content.scrollHeight}px` 
-                    }
-                }
-            }
-
-            window.addEventListener('resize', onResize) 
+    function focus(itemFocus, tabindex) {
+        itemFocus.forEach((item) => {
+            item.setAttribute('tabindex', tabindex);
         })
-
     }
 
-    smoothHeight('.accordion_item', '.accordion_trigger', '.accordion_content') 
+    if (!items.length) return
+
+    items.forEach(el => {
+        const button = el.querySelector(buttonSelector)
+        const content = el.querySelector(contentSelector)
+        const ifocus = el.querySelectorAll('.accordion_link-focus')
+
+        focus(ifocus, -1)
+
+        function transitionOn() {
+            content.style.transition = 'max-height 0.6s'
+        }
+
+        if (el.dataset.open == 'true') {
+            el.dataset.open = 'true'
+            content.style.maxHeight = `${content.scrollHeight}px`
+            content.style.transition = 'none'
+            focus(ifocus, 0)
+        }
+
+        button.addEventListener('click', () => {
+            if (el.dataset.open !== 'true') {
+                items.forEach((item) => {
+                    let content = item.querySelector(contentSelector)
+                    let itemfocus = item.querySelectorAll('.accordion_link-focus')
+                    if (item.dataset.open == 'true') {
+                        focus(itemfocus, -1)
+                        content.style.transition = 'max-height 0.6s'
+                        item.dataset.open = 'false'
+                        content.style.maxHeight = ''
+                    }
+                })
+                el.dataset.open = 'true'
+                transitionOn()
+                content.style.maxHeight = `${content.scrollHeight}px`
+                focus(ifocus, 0)
+            } else {
+                transitionOn()
+                el.dataset.open = 'false'
+                content.style.maxHeight = ''
+                focus(ifocus, -1)
+            }
+        })
+
+        const onResize = () => {
+            if (el.dataset.open === 'true') {
+                if (parseInt(content.style.maxHeight) !== content.scrollHeight) {
+                    content.style.maxHeight = `${content.scrollHeight}px`
+                }
+            }
+        }
+
+        window.addEventListener('resize', onResize)
+    })
+
+}
+
+smoothHeight('.accordion_item', '.accordion_trigger', '.accordion_content')
 
 // tabs 
-document.querySelectorAll('.сatalog_trigger').forEach((item) => {
-    item.addEventListener('click', function (e) {
-        e.preventDefault();
 
-        let id = e.target.getAttribute('href').replace('#', '')
-
-        document.querySelectorAll('.сatalog_trigger').forEach((child) => {
-            child.classList.remove('сatalog_trigger-active')
-        })
-
-        document.querySelectorAll('.сatalog_item').forEach((child) => {
+function accordionTabs(tabsTrigger,tabsItem,tabsActive){
+    document.querySelectorAll(`.${tabsTrigger}`).forEach((item) => {
+        item.addEventListener('click', function (e) {
+    
+            const id = e.target.getAttribute('href').replace('#', '')
+    
+    
+            document.querySelectorAll(`.${tabsItem}`).forEach((child) => {
+                child.classList.remove(`${tabsActive}`)
+            })
+    
             let tl = gsap.timeline({})
+    
+            tl.fromTo(document.getElementById(id), {
+                x: -200,
+                opacity:0,
+                duration: .6
+            }, {
+                display: 'block',
+                opacity: 1,
+                x: 0,
+                duration: .6
+            })
+            document.getElementById(id).classList.add(`${tabsActive}`)
+        })
+    })
+}
 
-            tl.to(child, {
+function catalogTabs(trigger,triggerActive,tabItem,itemActive){
+    document.querySelectorAll(`.${trigger}`).forEach((item) => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            let id = e.target.getAttribute('href').replace('#', '')
+    
+            document.querySelectorAll(`.${trigger}`).forEach((child) => {
+                child.classList.remove(`${triggerActive}`)
+            })
+    
+            document.querySelectorAll(`.${tabItem}`).forEach((child) => {
+                let tl = gsap.timeline({})
+    
+                tl.to(child, {
+                    display: 'none',
+                    opacity: 0,
+                    duration: 0,
+                    zIndex: -1
+                })
+    
+                child.classList.remove(`${itemActive}`)
+            })
+    
+            item.classList.add(`${triggerActive}`)
+    
+            let tl = gsap.timeline({})
+    
+            tl.fromTo(document.getElementById(id), {
                 display: 'none',
                 opacity: 0,
-                duration: 0,
-                zIndex: -1
+                x: -100,
+                duration: .3
+            }, {
+                display: 'block',
+                opacity: 1,
+                x: 0,
+                duration: .3
             })
-
-            child.classList.remove('сatalog_item-active')
+    
+            document.getElementById(id).classList.add(`${itemActive}`)
         })
-
-        item.classList.add('сatalog_trigger-active')
-
-        let tl = gsap.timeline({})
-
-        tl.fromTo(document.getElementById(id), {
-            display: 'none',
-            opacity: 0,
-            x: -100,
-            duration: .3
-        }, {
-            display: 'block',
-            opacity: 1,
-            x: 0,
-            duration: .3
-        })
-
-        document.getElementById(id).classList.add('сatalog_item-active')
     })
-})
+}
 
-document.querySelectorAll('.tabs_trigger-italy').forEach((item) => {
-    item.addEventListener('click', function (e) {
+accordionTabs('tabs_trigger-italy','tabs_item-italy','tabs_active-italy')
 
-        const id = e.target.getAttribute('href').replace('#', '')
+catalogTabs('сatalog_trigger','сatalog_trigger-active','сatalog_item','сatalog_item-active')
 
-
-        document.querySelectorAll('.tabs_item-italy').forEach((child) => {
-            child.classList.remove('tabs_active-italy')
-        })
-
-        document.getElementById(id).classList.add('tabs_active-italy')
-    })
-})
 
 // плавный скролл
 const anchors = document.querySelectorAll('.smooth')
@@ -1286,34 +1365,107 @@ if (developmentsItem.length !== developmentsPoint.length) {
     }
 }
 
+let developmentsCardClose = true
 
-if (body < 1024) {
-    developmentsItem.forEach((el, index) => {
-        if (index > 1) {
-            el.classList.add('developments_item-hidden')
+const developmentsCard = (itemSelector, buttonSelector, contentSelector) => {
+
+    const items = document.querySelectorAll(itemSelector)
+    const button = document.querySelector(buttonSelector)
+    const grid = document.querySelector('.developments_grid')
+
+    let developmentMinHeight = 700
+
+    if (body < 1200) {
+        developmentMinHeight = 683
+    }
+
+
+    if (!items.length) return
+
+    function open(content) {
+        content.style.transitionProperty = 'min-height, max-height, opacity'
+        content.style.transitionDuration = `0.6s`
+        content.style.maxHeight = `auto`
+        content.style.minHeight = `${developmentMinHeight}px`
+        content.style.opacity = '1'
+    }
+
+    function close(content) {
+        content.style.transition = `none`
+        content.style.maxHeight = `0`
+        content.style.minHeight = `0`
+        content.style.opacity = '0'
+        button.style.opacity = '1'
+    }
+
+    items.forEach((el, index) => {
+        const content = el.querySelector(contentSelector)
+
+        function resizeif() {
+            if (body < 1024 && body >= 768) {
+                if (index <= 1) {
+                    el.dataset.open = 'true'
+                    open(content)
+                } else if (index > 1 && developmentsCardClose) {
+                    el.dataset.open = 'false'
+                    close(content)
+                } else if (developmentsCardClose == false) {
+                    el.dataset.open = 'true'
+                    open(content)
+                }
+            } else if (body >= 1024) {
+                if (index <= 2) {
+                    el.dataset.open = 'true'
+                    open(content)
+                } else if (index > 2 && developmentsCardClose) {
+                    el.dataset.open = 'false'
+                    close(content)
+                } else if (developmentsCardClose == false) {
+                    el.dataset.open = 'true'
+                    open(content)
+                }
+            } else if (body < 768) {
+                el.dataset.open = 'true'
+                open(content)
+            }
         }
-    })
-} else if (body > 1024) {
-    developmentsItem.forEach((el, index) => {
-        if (index <= 2) {
-            el.classList.remove('developments_item-hidden')
+
+        resizeif()
+
+        if (el.dataset.open == 'true') {
+            el.dataset.open = 'true'
+            content.style.transition = 'none'
+            content.style.maxHeight = `auto`
+            content.style.minHeight = `${developmentMinHeight}px`
+            content.style.opacity = '1'
         }
+
+        button.addEventListener('click', () => {
+            if (el.dataset.open !== 'true') {
+                el.dataset.open = 'true'
+                open(content)
+                button.style.opacity = '0'
+                developmentsCardClose = false
+            }
+        })
+
+        const onResize = () => {
+            if (el.dataset.open === 'true') {
+                if (parseInt(content.style.maxHeight) !== content.scrollHeight) {
+                    open(content)
+                }
+            }
+            resizeif()
+        }
+
+        window.addEventListener('resize', onResize)
     })
+
 }
 
-developmentsBtn.addEventListener('click', function () {
-    developmentsItem.forEach((e, index) => {
-        if (body >= 1024) {
-            if (index > 2) {
-                e.classList.remove('developments_item-hidden')
-            }
-        } else {
-            if (index > 1) {
-                e.classList.remove('developments_item-hidden')
-            }
-        }
-    })
-})
+if (body >= 768) {
+    developmentsCard('.developments_item', '.developments_btn', '.developments_body')
+}
 
 function animationRepeat(e) {
     e.reversed(!e.reversed())
@@ -1349,11 +1501,15 @@ if (body > 768) {
     developmentsAllowSwipe = false
     developmentsTransition = false
     developmentsIndex = 0
+    developmentsCount = 0
     developmentsSliderTrack.style.transition = 'none';
 } else if (body < 768) {
     developmentsAllowSwipe = true
     developmentsTransition = true
 }
+
+developmentsPoint[developmentsCount].classList.add('developments_point-active')
+
 developmentsSlide = function () {
         if (developmentsTransition) {
             developmentsSliderTrack.style.transition = 'transform .5s';
@@ -1622,6 +1778,13 @@ window.addEventListener("resize", () => {
 
     body = document.body.offsetWidth
 
+    if (body > 768){
+        selectActive()
+    } else if (body < 768){
+        editionsSelectClose()
+        editionsHeader.addEventListener('click', selectActive)
+    }
+
     projecSlideWidth = document.querySelector('.project_track').offsetWidth
 
     gallerySlideWidth = document.querySelector('.gallery_slider').offsetWidth
@@ -1629,6 +1792,11 @@ window.addEventListener("resize", () => {
     heroTrackWidth = heroTrack.offsetWidth
 
     heroIndex = 0
+
+    developmentsPoint.forEach(item => {
+        item.classList.remove('developments_point-active')
+        developmentsPoint[developmentsCount].classList.add('developments_point-active')
+    })
 
     heroTrack.style.transform = `translate3d(0px, 0px, 0px)`
 
@@ -1644,10 +1812,15 @@ window.addEventListener("resize", () => {
         developmentsAllowSwipe = false
         developmentsTransition = false
         developmentsIndex = 0
+        developmentsCount = 0
         developmentsSliderTrack.style.transition = 'none';
     } else if (body < 768) {
         developmentsAllowSwipe = true
         developmentsTransition = true
+    }
+
+    if (body >= 768) {
+        developmentsCard('.developments_item', '.developments_btn', '.developments_body')
     }
 
     tooltipTrigger.forEach((item) => {
@@ -1703,23 +1876,7 @@ window.addEventListener("resize", () => {
         projectNum = 1;
     };
 
-
-    if (body < 1024) {
-        developmentsItem.forEach((el, index) => {
-            if (index > 1) {
-                el.classList.add('developments_item-hidden')
-            }
-        })
-    } else if (body > 1024) {
-        developmentsItem.forEach((el, index) => {
-            if (index <= 2) {
-                el.classList.remove('developments_item-hidden')
-            }
-        })
-    }
-
     projectSliderTrack.style.transform = `translate3d(-${projecSlideIndexh * projecSlideWidth}px, 0px, 0px)`;
-
 
     editionsSliderTrack.style.transform = `translate3d(-${editionsSlideIndex * editionsSlideWidth}px, 0px, 0px)`;
 

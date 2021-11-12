@@ -21,4 +21,8 @@
     background-color: $color_9D5CD0;
     padding: 22.5px 35px;
     margin-bottom: 20px;
+    &::before{
+        content:'';
+        transition: transform .4s;
+    }
 }

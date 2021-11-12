@@ -5,6 +5,7 @@
 .login,
 .burger_login{
     @include font-style(400, $fz_18px, $lh_25);
+    transform: translateX(5px);
 }
 
 .overlay_link {
@@ -25,11 +26,6 @@
 
 .drop-menu_link.active::before {
     transform: rotate(180deg);
-}
-
-.overlay_link,
-.menu_link {
-    padding: 0 5px;
 }
 
 .overlay_btn {
@@ -150,11 +146,6 @@
 
 .overlay_sub_item:nth-child(4n+4) {
     background: url(../img/header/4.webp);
-}
-
-.login,
-.burger_login{
-    padding: 0 5px;
 }
 
 .header_svg {

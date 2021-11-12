@@ -72,7 +72,7 @@
     }
 }
 
-.login:focus {
+.login:focus{
     color: $color_white;
 
     &::after {
@@ -84,6 +84,9 @@
         height: 100%;
         background-color: $color_7943A4;
         z-index: -1;
+    }
+    .login_icon {
+        fill: $color_white;
     }
 
     .login_icon {
@@ -100,16 +103,25 @@
 }
 
 .login:active {
-    color: $color_7943A4;
-
+    color: $color_white;
     .login_icon {
-        fill: $color_7943A4
+        fill: $color_white;
     }
 }
 
 .hero_btn:hover {
     border: 2px solid $color_C283F3;
     ;
+}
+
+.hero_btn,
+.contacts_btn,
+.developments_btn,
+.burger_login{
+    &::before{
+        content:'';
+        transition: transform .4s;
+    }
 }
 
 .hero_btn:focus,
@@ -172,11 +184,11 @@
 }
 
 .gallery_slide:hover {
-    outline: 2px solid $color_7943A4;
+    border: 2px solid $color_7943A4;
 }
 
 .gallery_slide:focus {
-    outline: 3px solid $color_7943A4;
+    border: 2px solid $color_7943A4;
 }
 
 .gallery_slide:hover::before {
@@ -228,6 +240,21 @@
     }
 }
 
+.accordion_trigger:focus {
+    .catalog_date {
+        color:$color_white;
+        background-color: $color_9D5CD0;
+    }
+
+    .accordion_svg {
+        fill: #D1A9F0;
+    }
+
+    .accordion_trigger{
+        border-color: $color_9D5CD0;
+    }
+}
+
 .accordion_trigger:active{
 
     .catalog_date {
@@ -238,20 +265,6 @@
         fill: #D1A9F0;
         border: 2px solid $color_9D5CD0;
         border-radius: 100%;
-    }
-
-    .accordion_trigger{
-        border-color: $color_9D5CD0;
-    }
-}
-
-.accordion_trigger:focus {
-    .catalog_date {
-        background-color: $color_9D5CD0;
-    }
-
-    .accordion_svg {
-        fill: #D1A9F0;
     }
 
     .accordion_trigger{
