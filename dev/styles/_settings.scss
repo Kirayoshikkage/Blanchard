@@ -25,9 +25,7 @@ img{
     max-width: 100%;
 }
 
-button,
-.overlay_input,
-.navigation_input{
+button{
     background-color: transparent;
     border:none;
     outline: none;
@@ -42,7 +40,5 @@ a{
     max-width: 1630px;
     margin:0 auto;
     padding:0 15px;
-}
-body.scroll-hidden{
     overflow: hidden;
 }

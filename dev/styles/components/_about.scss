@@ -4,6 +4,9 @@
 
 .title {
     @include font-style (400, $fz_48px, $lh_65, $color_black);
+}
+
+.title_margin-bottom{
     margin-bottom: 18px;
 }
 
@@ -11,6 +14,6 @@
     @include font-style (400, $fz_16px, $lh_32, $color_black);
 }
 
-.about_text {
+.about__text {
     max-width: 1080px;
 }

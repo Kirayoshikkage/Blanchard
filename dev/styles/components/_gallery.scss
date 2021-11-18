@@ -5,7 +5,7 @@
     padding: 80px 0;
 }
 
-.gallery_grid {
+.gallery__grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: repeat(2, 1fr);
@@ -13,121 +13,67 @@
     column-gap: 50px;
 }
 
-.gallery_item:first-child {
+.gallery__item:first-child {
     align-self: start;
 }
 
-.gallery_item-slider {
+.gallery__item_slider{
+    align-self: start;
     grid-row: 1/3;
     grid-column: 2/3;
 }
 
-.gallery_title {
-    margin-bottom: 15px !important;
-}
-
-.gallery_text-margin {
-    margin-bottom: 10px;
-}
-
-.gallery_item:last-child {
+.gallery__item:last-child {
     transform: translateY(10px);
 }
 
-.gallery_text {
+.gallery__text {
     max-width: 380px;
 }
 
-.gallery_link {
+.gallery__text_margin-bottom{
+    margin-bottom: 5px
+}
+
+.gallery__link {
     @include font-style (400, $fz_16px, $lh_32, $color_9D5CD0);
 }
 
-.gallery_slider {
-    max-width: 1150px;
-    z-index: 1;
+.gallery__title,
+.gallery__text {
+    color: white;
+}   
+
+.popup{
+    display: none;
 }
 
-.gallery_title,
-.gallery_text {
-    color: white !important;
-}
-
-.gallery_list {
+.gallery__list{
     position: relative;
-    padding-top: 83px;
-    z-index: 1;
 }
 
-.gallery_track {
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-auto-flow: column;
-    row-gap: 50px;
-}
-
-.gallery_slide {
+.gallery__slide{
     display: block;
     position: relative;
-    width: 350px;
-    height: 350px;
-    &::after,
-    &::before{
-        content:'';
-        transition: background .4s;
-    }
-
 }
 
-.gallery_img {
+.gallery__img {
     object-fit: cover;
 }
 
-
-.gallery_slide:not(:nth-child(odd)) {
+.gallery__slide:not(:nth-child(odd)) {
     margin-right: 50px;
 }
 
-.gallery_slide:nth-child(6n) {
+.gallery__slide:nth-child(6n) {
     margin-right: 0
 }
 
-
-.gallery_arrows,
-.editions_arrows {
-    width: 130px;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 25px;
-    justify-content: space-between;
-    z-index: 2;
+.date{
+    display: block;
+    @include font-style (400, $fz_12px, $lh_16, $color_666);
 }
 
-.next,
-.prev {
-    margin: 0;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    width: 30px;
-    height: 30px;
-    padding:2px;
-    &::before{
-        content:'';
-        position: absolute;
-        top:0;
-        left:0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-    }
-}
-
-.slider-counter {
-    position: absolute;
-    top: 25px;
-    left: 48px;
-    color: #fff;
-    @include font-style (400, $fz_16px, $lh_32);
+.gallery__slider{
+    max-width: 1150px;
 }

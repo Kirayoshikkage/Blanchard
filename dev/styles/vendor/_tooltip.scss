@@ -1,4 +1,4 @@
-.tooltip {
+.tooltip__content {
     position: fixed;
     padding: 8px 11px 10px;
     @include font-style(600, $fz_12px, $lh_16);
@@ -9,7 +9,7 @@
     text-align: center;
 }
 
-.tooltip_trigger {
+.tooltip__trigger {
     position: relative;
     z-index: 10;
     width: 16px;
@@ -17,13 +17,7 @@
     transform: translateY(-8px);
 }
 
-.project_tooltip {
-    position: relative;
-    display: inline-block;
-    transform: translateY(8px);
-}
-
-.tooltip_icon {
+.tooltip__icon {
     position: absolute;
     z-index: 1;
     width: 16px;

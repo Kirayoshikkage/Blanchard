@@ -1,24 +1,28 @@
-.tabs_triggers,
 .сatalog_triggers {
     display: flex;
 }
 
-.tabs_item,
-.сatalog_item,
-.tabs_item-italy {
+.сatalog__item,
+.tabs{
     display: none !important;
     height: 100%;
 }
 
-.tabs_item-active,
-.сatalog_item-active,
-.tabs_active-italy {
+.сatalog__item_active,
+.tabs_active,
+.tabs-france_active,
+.tabs-germany_active,
+.tabs-italy_active,
+.tabs-russia_active,
+.tabs-belgium_active{
     display: block !important; 
 }
 
-.tabs_item-france,
-.tabs_item-russia,
-.tabs_item-germany,
-.tabs_item-belgium {
-    height: 100%;
+.tabs__text{
+    @include font-style (400, $fz_16px, $lh_20, $color_333);
+    margin-bottom:15px;
+}
+
+.tabs__painter {
+    margin-bottom: 30px;
 }

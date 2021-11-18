@@ -1,103 +1,63 @@
-.menu_link {
-    @include font-style(600, $fz_18px, $lh_25);
+.header__navigation {
+    background-color: $color_black;
+    padding: 28px 0;
 }
 
-.login,
-.burger_login{
-    @include font-style(400, $fz_18px, $lh_25);
-    transform: translateX(5px);
-}
-
-.overlay_link {
-    @include font-style(400, $fz_18px, $lh_25);
-
-    &::before {
-        content: '';
-        position: absolute;
-        top: 45%;
-        right: -20px;
-        width: 12px;
-        height: 7px;
-        background: url(../img/header/menu.svg) no-repeat;
-        transition: transform .4s;
-        z-index: 2;
-    }
-}
-
-.drop-menu_link.active::before {
-    transform: rotate(180deg);
-}
-
-.overlay_btn {
-    margin-right: 10px;
-    transform: translateY(3px);
-}
-
-.overlay_input {
-    color:$color_white;
-    min-width: 218px;
-    cursor: text;
-}
-
-.search_label {
-    position: relative;
-
-    &::before {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        width: 100%;
-        border-bottom: 1px solid $color_white;
-    }
-}
-
-
-.overlay_input::placeholder {
-    @include font-style(400, $fz_18px, $lh_25);
-}
-
-.burger_icon,
-.navigation_btn,
-.navigation_search {
-    display: none
-}
-
-.burger_icon,
-.search_btn,
-.navigation_btn,
-.burger_close,
-.search_close,
-.overlay_btn{
-    svg{
-        fill:#fff
-    }
-}
-
-.navigation_btn {
-    z-index: 1;
-}
-
-.overlay_sub_list {
-    padding: 0 40px;
-    top: 190%;
-    box-sizing: content-box;
-    background-color: rgba(0,0,0,0.6);
-    border-top: 40px solid rgba(0,0,0,0);
-    border-bottom: 40px solid rgba(0,0,0,0);
-    max-height: 220px;
-    min-width: 220px;
-    overflow-x: none;
-    transition-property: transform, opacity, visibility;
-    transition-duration: 0.4s;
-}
-
-.overlay_sub_item {
+.navigation__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
-.overlay_sub_item:not(:last-child) {
-    margin-bottom: 20px;
+.menu__link {
+    padding: 0 5px;
+    @include font-style (600, $fz_18px, $lh_25)
+}
+
+.menu__item_margin-right:not(:last-child) {
+    margin-right: 52px;
+}
+
+.menu {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+.menu_template-column {
+    grid-template-columns: repeat(7, auto);
+}
+
+.menu_margin-right {
+    margin-right: 105px;
+}
+
+.login {
+    @include font-style (400, $fz_18px, $lh_25)
+}
+
+.login__icon {
+    fill: $color_white;
+    transform: translateX(-3px);
+}
+
+.search-form__icon_size-small {
+    width: 22px;
+    height: 20px;
+}
+
+.overlay {
+    background: #00000066;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.overlay__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 0 23px;
 }
 
 .simplebar-scrollbar:before {
@@ -117,7 +77,7 @@
     height: 220px;
 }
 
-.simplebar-wrapper{
+.simplebar-wrapper {
     height: 220px;
 }
 
@@ -126,28 +86,56 @@
     right: 10px;
 }
 
-
-.overlay_sub_link {
-    display: block;
-    padding: 9px 12px 12px;
+.search-form {
+    display: flex;
+    flex-direction: row-reverse;
 }
 
-.overlay_sub_item:nth-child(4n+1) {
-    background: url(../img/header/1.webp);
+.overlay__search-form {
+    transform: translate(-3px, 4px);
 }
 
-.overlay_sub_item:nth-child(4n+2) {
-    background: url(../img/header/2.webp);
+.search-form__label {
+    position: relative;
+
+    &::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 1px solid $color_white;
+    }
 }
 
-.overlay_sub_item:nth-child(4n+3) {
-    background: url(../img/header/3.webp);
+.overlay__container {
+    overflow: visible;
 }
 
-.overlay_sub_item:nth-child(4n+4) {
-    background: url(../img/header/4.webp);
+.search-form__icon {
+    fill: $color_white;
+    margin-right: 10px;
 }
 
-.header_svg {
-    fill: #CACACA
+.search-form__input_min-width {
+    min-width: 218px;
+}
+
+.search-form__input_placegolder::placeholder {
+    @include font-style (400, $fz_18px, $lh_25)
+}
+
+.search-form__input_background-inherit {
+    background: inherit;
+}
+
+.search-form__input {
+    color: $color_white;
+}
+
+.navigation__burger-icon,
+.navigation__search-form,
+.navigation__search-open {
+    display: none;
 }

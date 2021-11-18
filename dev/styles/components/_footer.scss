@@ -2,22 +2,15 @@
     background-color: $color_black;
 }
 
-.footer_content,
-.socials_list {
+.footer__content {
     display: flex;
-}
-
-.footer_content {
     justify-content: space-between;
     align-items: center;
     padding: 46px 0;
 }
 
-.socials_item:not(:last-child) {
-    margin-right: 20px;
-}
-
-.socials_svg {
+.footer__svg{
+    fill:#CACACA;
     width: 45px;
     height: 45px;
 }

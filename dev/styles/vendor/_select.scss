@@ -42,7 +42,7 @@
     transition: max-height .4s;
 }
 
-.select_content{
+.select__content{
     border: 1px solid #fff;
     border-radius: 6px;
     border-top: 0;
@@ -75,6 +75,6 @@
     border-radius: 6px;
 }
 
-.hidden{
+.select__item_hidden{
     display: none;
 }
