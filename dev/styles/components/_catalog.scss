@@ -1,87 +1,87 @@
 .сatalog {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
 }
 
-.сatalog__title{
-    display: inline;
-    margin-right: 28px;
+.сatalog__title {
+  display: inline;
+  margin-right: 28px;
 }
 
 .сatalog__triggers {
-    display: inline-flex !important;
-    transform: translateY(8px);
-    margin-bottom: 30px;
+  display: inline-flex !important;
+  transform: translateY(8px);
+  margin-bottom: 30px;
 
-    img {
-        pointer-events: none;
-    }
+  img {
+    pointer-events: none;
+  }
 }
 
 .сatalog__trigger {
-    position: relative;
-    width: 46px;
-    height: 46px;
+  position: relative;
+  width: 46px;
+  height: 46px;
 
-    img {
-        position: absolute;
-    }
-    
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -2%;
-        width: 105%;
-        height: 100%;
-        border: 2px solid $color_7943A4;
-        border-radius: 100%;
-        transform: scale(1) ;
-        opacity: 0;
-        transition: transform .3s;
-    }
+  img {
+    position: absolute;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2%;
+    width: 105%;
+    height: 100%;
+    border: 2px solid $color_7943A4;
+    border-radius: 100%;
+    transform: scale(1);
+    opacity: 0;
+    transition: transform .3s;
+  }
 }
 
-.сatalog__trigger_active::after{
-    opacity: 1;
-    transform: scale(1.4);
+.сatalog__trigger_active::after {
+  opacity: 1;
+  transform: scale(1.4);
 }
 
 .сatalog__trigger:not(:last-child) {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .сatalog__txt {
-    margin-bottom: 38px;
-    max-width: 1080px;
+  margin-bottom: 38px;
+  max-width: 1080px;
 }
 
 .country__content {
-    display: grid;
-    grid-template-columns: minmax(0, 750px) minmax(0, 800px);
-    grid-template-rows: auto;
-    column-gap: 50px;
+  display: grid;
+  grid-template-columns: minmax(0, 750px) minmax(0, 800px);
+  grid-template-rows: auto;
+  column-gap: 50px;
 }
 
 .сatalog__item_active {
-    position: relative;
+  position: relative;
 
-    &::after {
-        opacity: 1;
-        transform: scale(1.4) ;
-    }
+  &::after {
+    opacity: 1;
+    transform: scale(1.4);
+  }
 }
 
 
 .subtitle,
-.accordion__desc{
-    @include font-style (600, $fz_24px, $lh_32, $color_333);
+.accordion__desc {
+  @include font-style (600, $fz_24px, $lh_32, $color_333);
 }
 
 .tabs__subtitle,
 .accordion__desc {
-    margin-bottom: 7px;
+  margin-bottom: 7px;
 }
 
-.date_margin-bottom{
-    margin-bottom: 10px;
+.date_margin-bottom {
+  margin-bottom: 10px;
 }

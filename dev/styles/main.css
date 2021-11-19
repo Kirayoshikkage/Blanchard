@@ -983,14 +983,20 @@ a {
   min-height: 700px;
   max-width: 100vw;
   overflow: hidden;
+  background-color: #000;
 }
 
 .hero__slider {
   position: absolute;
   z-index: 1;
   height: 100%;
-  display: flex;
+  animation: heroAnimation 2s infinite alternate;
+}
+
+.hero__track {
   transition: transform 0.5s;
+  height: 100%;
+  display: flex;
 }
 
 .hero__content {
@@ -1006,6 +1012,17 @@ a {
   width: 100%;
 }
 
+@keyframes heroAnimation {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
 .hero__img {
   pointer-events: none;
   width: 100%;
@@ -1078,7 +1095,7 @@ a {
 }
 
 .gallery {
-  background: url(../img/gallery/background.webp) no-repeat;
+  background: #000 url(../img/gallery/background.webp) no-repeat;
   background-size: cover;
   margin-bottom: 80px;
   padding: 80px 0;
@@ -1321,7 +1338,7 @@ a {
 }
 
 .editions {
-  background: url(../img/editions/background.webp) no-repeat;
+  background: #000 url(../img/editions/background.webp) no-repeat;
   background-size: cover;
   margin-bottom: 80px;
 }

@@ -1,8 +1,8 @@
 //миксины
 
-@mixin font-style ($font-weight, $font-size, $line-height,$color: $color_white){
-    font-weight: $font-weight;
-    font-size: $font-size;
-    line-height: $line-height;
-    color:$color;
+@mixin font-style ($font-weight, $font-size, $line-height, $color: $color_white) {
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: $color;
 }

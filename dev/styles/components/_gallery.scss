@@ -1,79 +1,79 @@
 .gallery {
-    background: url(../img/gallery/background.webp) no-repeat;
-    background-size: cover;
-    margin-bottom: 80px;
-    padding: 80px 0;
+  background: $color_black url(../img/gallery/background.webp) no-repeat;
+  background-size: cover;
+  margin-bottom: 80px;
+  padding: 80px 0;
 }
 
 .gallery__grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(2, 1fr);
-    align-items: end;
-    column-gap: 50px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: end;
+  column-gap: 50px;
 }
 
 .gallery__item:first-child {
-    align-self: start;
+  align-self: start;
 }
 
-.gallery__item_slider{
-    align-self: start;
-    grid-row: 1/3;
-    grid-column: 2/3;
+.gallery__item_slider {
+  align-self: start;
+  grid-row: 1/3;
+  grid-column: 2/3;
 }
 
 .gallery__item:last-child {
-    transform: translateY(10px);
+  transform: translateY(10px);
 }
 
 .gallery__text {
-    max-width: 380px;
+  max-width: 380px;
 }
 
-.gallery__text_margin-bottom{
-    margin-bottom: 5px
+.gallery__text_margin-bottom {
+  margin-bottom: 5px
 }
 
 .gallery__link {
-    @include font-style (400, $fz_16px, $lh_32, $color_9D5CD0);
+  @include font-style (400, $fz_16px, $lh_32, $color_9D5CD0);
 }
 
 .gallery__title,
 .gallery__text {
-    color: white;
-}   
-
-.popup{
-    display: none;
+  color: white;
 }
 
-.gallery__list{
-    position: relative;
+.popup {
+  display: none;
 }
 
-.gallery__slide{
-    display: block;
-    position: relative;
+.gallery__list {
+  position: relative;
+}
+
+.gallery__slide {
+  display: block;
+  position: relative;
 }
 
 .gallery__img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 .gallery__slide:not(:nth-child(odd)) {
-    margin-right: 50px;
+  margin-right: 50px;
 }
 
 .gallery__slide:nth-child(6n) {
-    margin-right: 0
+  margin-right: 0
 }
 
-.date{
-    display: block;
-    @include font-style (400, $fz_12px, $lh_16, $color_666);
+.date {
+  display: block;
+  @include font-style (400, $fz_12px, $lh_16, $color_666);
 }
 
-.gallery__slider{
-    max-width: 1150px;
+.gallery__slider {
+  max-width: 1150px;
 }

@@ -1,16 +1,16 @@
 .footer {
-    background-color: $color_black;
+  background-color: $color_black;
 }
 
 .footer__content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 46px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 46px 0;
 }
 
-.footer__svg{
-    fill:#CACACA;
-    width: 45px;
-    height: 45px;
+.footer__svg {
+  fill: #CACACA;
+  width: 45px;
+  height: 45px;
 }

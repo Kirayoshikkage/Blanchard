@@ -1,29 +1,29 @@
 .tooltip__content {
-    position: fixed;
-    padding: 8px 11px 10px;
-    @include font-style(600, $fz_12px, $lh_16);
-    color: $color_white;
-    background: $color_9D5CD0;
-    z-index: 10;
-    max-width: 264px;
-    text-align: center;
+  position: fixed;
+  padding: 8px 11px 10px;
+  @include font-style(600, $fz_12px, $lh_16);
+  color: $color_white;
+  background: $color_9D5CD0;
+  z-index: 10;
+  max-width: 264px;
+  text-align: center;
 }
 
 .tooltip__trigger {
-    position: relative;
-    z-index: 10;
-    width: 16px;
-    height: 16px;
-    transform: translateY(-8px);
+  position: relative;
+  z-index: 10;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-8px);
 }
 
 .tooltip__icon {
-    position: absolute;
-    z-index: 1;
-    width: 16px;
-    height: 16px;
-    top: 0;
-    left: 0;
-    stroke: $color_black;
-    fill: $color_white;
+  position: absolute;
+  z-index: 1;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  stroke: $color_black;
+  fill: $color_white;
 }

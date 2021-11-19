@@ -1,66 +1,66 @@
 .developments {
-    margin-bottom: 80px;
+  margin-bottom: 80px;
 }
 
 .developments__title {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .developments__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  align-items: stretch;
 }
 
-.developments__body{
-    outline: 1px solid $color_CACACA;
-    display: flex;
-    flex-direction: column;
-    min-height: 0;
-    height: 100%;
-    opacity: 0;
-    overflow: hidden;
-    transition-property: min-height, max-height, opacity;
-    transition-duration: 0.6s;
+.developments__body {
+  outline: 1px solid $color_CACACA;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  opacity: 0;
+  overflow: hidden;
+  transition-property: min-height, max-height, opacity;
+  transition-duration: 0.6s;
 }
 
 .developments__content {
-    flex-grow: 2;
-    padding: 11px 20px 43px 50px;
-    display: flex;
-    flex-direction: column;
+  flex-grow: 2;
+  padding: 11px 20px 43px 50px;
+  display: flex;
+  flex-direction: column;
 }
 
-.developments__subtitle{
-    margin-bottom: 4px;
+.developments__subtitle {
+  margin-bottom: 4px;
 }
 
 .developments__text {
-    color: $color_333;
-    flex-grow: 2;
+  color: $color_333;
+  flex-grow: 2;
 }
 
 .developments__link {
-    color: $color_9D5CD0;
-    border-bottom: 1px solid $color_9D5CD0;
-    align-self: flex-start;
+  color: $color_9D5CD0;
+  border-bottom: 1px solid $color_9D5CD0;
+  align-self: flex-start;
 }
 
-.developments__points{
-    display: none;
+.developments__points {
+  display: none;
 }
 
-.developments__button{
-    display: block;
-    color: $color_9D5CD0;
-    padding: 15px 35px;
-    margin: 0 auto;
-    transition: opacity 0.6s;
-    transform: translateY(-4px);
+.developments__button {
+  display: block;
+  color: $color_9D5CD0;
+  padding: 15px 35px;
+  margin: 0 auto;
+  transition: opacity 0.6s;
+  transform: translateY(-4px);
 }
 
-.developments__date{
-    text-align: end;
-    margin-bottom: 5px;
+.developments__date {
+  text-align: end;
+  margin-bottom: 5px;
 }

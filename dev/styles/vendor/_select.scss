@@ -1,80 +1,80 @@
 .select {
-    max-width: 400px;
-    position: relative;
+  max-width: 400px;
+  position: relative;
 }
 
-.select[data-open="true"]{
-    .select__icon{
-        transform: rotate(180deg);
-    }
+.select[data-open="true"] {
+  .select__icon {
+    transform: rotate(180deg);
+  }
 }
 
 .select__header {
-    width: 100%;
-    position: relative;
-    display: flex;
-    border: 1px solid #fff;
-    cursor: pointer;
-    align-items: center;
-    border-radius: 6px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  border: 1px solid #fff;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 6px;
 }
 
 .select__current {
-    padding: 0px 15px;
-    @include font-style (400, $fz_16px, $lh_32)
+  padding: 0px 15px;
+  @include font-style (400, $fz_16px, $lh_32)
 }
 
 .select__icon {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    flex-shrink: 0;
-    margin-left: auto;
-    transition: transform .4s;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform .4s;
 }
 
 .select__body {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .4s;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s;
 }
 
-.select__content{
-    border: 1px solid #fff;
-    border-radius: 6px;
-    border-top: 0;
+.select__content {
+  border: 1px solid #fff;
+  border-radius: 6px;
+  border-top: 0;
 }
 
 .select__item {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    cursor: pointer;
-    text-align: start;
-    @include font-style (400, $fz_16px, $lh_32, #999999)
+  display: block;
+  width: 100%;
+  padding: 8px;
+  cursor: pointer;
+  text-align: start;
+  @include font-style (400, $fz_16px, $lh_32, #999999)
 }
 
 .select__item:not(:last-child) {
-    border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .select__item:hover,
 .select__item:focus,
 .select__item:hover:active {
-    color: $color_white;
-    background-color: rgba(255, 255, 255, 0.2);
+  color: $color_white;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .select__header:hover,
 .select__header:focus,
 .select__header:active {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
 }
 
-.select__item_hidden{
-    display: none;
+.select__item_hidden {
+  display: none;
 }

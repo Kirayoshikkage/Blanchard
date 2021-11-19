@@ -1,11 +1,11 @@
 .сatalog_triggers {
-    display: flex;
+  display: flex;
 }
 
 .сatalog__item,
-.tabs{
-    display: none !important;
-    height: 100%;
+.tabs {
+  display: none !important;
+  height: 100%;
 }
 
 .сatalog__item_active,
@@ -14,15 +14,15 @@
 .tabs-germany_active,
 .tabs-italy_active,
 .tabs-russia_active,
-.tabs-belgium_active{
-    display: block !important; 
+.tabs-belgium_active {
+  display: block !important;
 }
 
-.tabs__text{
-    @include font-style (400, $fz_16px, $lh_20, $color_333);
-    margin-bottom:15px;
+.tabs__text {
+  @include font-style (400, $fz_16px, $lh_20, $color_333);
+  margin-bottom: 15px;
 }
 
 .tabs__painter {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
