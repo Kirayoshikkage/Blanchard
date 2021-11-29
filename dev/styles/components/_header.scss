@@ -1,0 +1,149 @@
+.header__navigation {
+  background-color: $color_black;
+  padding: 28px 0;
+}
+
+.navigation__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.menu__link {
+  padding: 0 5px;
+  @include font-style (600, $fz_18px, $lh_25)
+}
+
+.menu__item_margin-right:not(:last-child) {
+  margin-right: 52px;
+}
+
+.menu {
+  display: grid;
+  grid-auto-flow: row;
+}
+
+.menu_template-column {
+  grid-template-columns: repeat(7, auto);
+}
+
+.menu_margin-right {
+  margin-right: 105px;
+}
+
+.login {
+  @include font-style (400, $fz_18px, $lh_25)
+}
+
+.login__icon {
+  fill: $color_white;
+  transform: translateX(-3px);
+}
+
+.search-form__icon_size-small {
+  width: 22px;
+  height: 20px;
+}
+
+.overlay {
+  background: #00000066;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.overlay__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23px 0 23px;
+}
+
+.simplebar-scrollbar:before {
+  background: $color_white;
+  border-radius: 0px;
+  left: 0;
+  right: 0;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar:before {
+  top: 0;
+  bottom: 0;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 2px;
+  height: 220px;
+}
+
+.simplebar-wrapper {
+  height: 220px;
+}
+
+.simplebar-track {
+  background-color: $color_black;
+  right: 10px;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.overlay__search-form {
+  transform: translate(-3px, 4px);
+}
+
+.search-form__label {
+  position: relative;
+
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid $color_white;
+  }
+}
+
+.overlay__container {
+  overflow: visible;
+}
+
+.search-form__icon {
+  margin-right: 10px;
+}
+.search-form__close,
+.search-form__icon{
+  fill: $color_white;
+}
+
+.search-form__input_min-width {
+  min-width: 225px;
+}
+
+.search-form__input_placegolder::placeholder {
+  @include font-style (400, $fz_18px, $lh_25)
+}
+
+.search-form__input_background-inherit {
+  background: inherit;
+}
+
+.search-form__input {
+  color: $color_white;
+}
+
+.navigation__burger-icon,
+.navigation__search-form,
+.navigation__search-open,
+.search-form__close{
+  display: none;
+}
+
+.navigation__container{
+  overflow: hidden;
+}
