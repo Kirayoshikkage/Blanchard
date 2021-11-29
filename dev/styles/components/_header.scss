@@ -114,12 +114,15 @@
 }
 
 .search-form__icon {
-  fill: $color_white;
   margin-right: 10px;
+}
+.search-form__close,
+.search-form__icon{
+  fill: $color_white;
 }
 
 .search-form__input_min-width {
-  min-width: 218px;
+  min-width: 225px;
 }
 
 .search-form__input_placegolder::placeholder {
@@ -136,6 +139,11 @@
 
 .navigation__burger-icon,
 .navigation__search-form,
-.navigation__search-open {
+.navigation__search-open,
+.search-form__close{
   display: none;
+}
+
+.navigation__container{
+  overflow: hidden;
 }

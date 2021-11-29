@@ -10,7 +10,7 @@
 }
 
 .slider__list {
-  overflow: hidden;
+  overflow:hidden;
 }
 
 .slider__list.grab {
@@ -53,6 +53,7 @@
 .slider__track {
   display: grid;
   grid-auto-flow: column;
+  height: 100%;
 }
 
 .slider__track_tempalte-rows {
@@ -121,6 +122,8 @@
   svg {
     border-radius: 100%;
     border: 2px solid transparent;
+    transition-property: fill,border;
+    transition-property: .3s;
   }
 }
 

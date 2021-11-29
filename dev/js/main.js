@@ -40,7 +40,8 @@ dropMenuLink.forEach((item) => {
 //search-menu
 
 const searchBtnOpen = document.querySelector('.navigation__search-open')
-let searchBtnClose = document.querySelector('.search-form__close-btn'),
+let searchClose = document.body,
+searchCloseBtn = document.querySelector('.search-form__close'),
   searchTl = gsap.timeline({})
 
 searchTl.to('.navigation__search-open', {
@@ -68,8 +69,14 @@ searchBtnOpen.addEventListener('click', function () {
   searchTl.play()
 })
 
-searchBtnClose.addEventListener('click', function () {
-  searchTl.reverse()
+searchClose.addEventListener('click', function (e) {
+  if (!e.target.closest('.search-sclose')) {
+    searchTl.reverse()
+  }
+})
+
+searchCloseBtn.addEventListener('click', function (e) {
+    searchTl.reverse()
 })
 
 if (body > 1200) {
@@ -171,7 +178,9 @@ let heroTrack = document.querySelector('.hero__track'),
 
   heroTrackWidth = body,
 
-  heroSlideLength = document.querySelectorAll('.hero__slide').length
+  heroSlideLength = document.querySelectorAll('.hero__slide').length,
+
+  heroAnimation = document.querySelector('.hero__slider')
 
 heroIndex = 0;
 
@@ -181,16 +190,16 @@ function nextSlide(e) {
   heroTrack.style.transform = `translate3d(-${e * heroTrackWidth}px, 0px, 0px)`;
 }
 
-let fps = 0.25
+let fps = 0.0625
 
 function step() {
   setTimeout(function () {
     if (heroIndex < heroSlideLength - 1) {
-      heroIndex++
-      nextSlide(heroIndex)
+        heroIndex++
+        nextSlide(heroIndex)
     } else {
-      heroIndex = 0
-      heroTrack.style.transform = `translate3d(0px, 0px, 0px)`;
+        heroIndex = 0
+        heroTrack.style.transform = `translate3d(0px, 0px, 0px)`;
     }
     requestAnimationFrame(step)
   }, 1000 / fps)
@@ -436,7 +445,7 @@ galleryArrows.addEventListener('keydown', function (e) {
 })
 
 gallerySlides.forEach((item, index) => {
-  item.addEventListener('focus', function (e) {
+  item.addEventListener('keyup', function (e) {
     if (body > 1700) {
       galleryFocus(index, 6)
     }
@@ -1383,7 +1392,7 @@ editionsArrows.addEventListener('keydown', function (e) {
 let editionsBtn = document.querySelectorAll('.editions__button')
 
 editionsBtn.forEach((item, index) => {
-  item.addEventListener('focus', function (e) {
+  item.addEventListener('keyup', function (e) {
     if (body > 1700) {
       editionsFocus(index, 3)
     }
@@ -1776,12 +1785,35 @@ projectArrows.addEventListener('keydown', function (e) {
 })
 
 projectSlides.forEach((item, index) => {
-  item.addEventListener('focus', function (e) {
+  item.addEventListener('keyup', function (e) {
     if (body > 1700) {
       projectFocus(index, 3)
     }
     if (body <= 1700 && body >= 768) {
       projectFocus(index, 2)
+    }
+  })
+})
+
+let ProjectPosStartX = 0,
+ProjectPosStartY = 0;
+
+projectSlides.forEach((item) => {
+  item.addEventListener('mousemove', function (event) {
+    event = event || window.event;
+    ProjectPosStartX = event.offsetX
+    ProjectPosStartY = event.offsetY
+  })
+})
+
+projectSlides.forEach((item) => {
+  item.addEventListener('click', function (e) {
+    let ProjectPosFinalX = e.offsetX,
+      posFinalY = e.offsetY
+    if ((ProjectPosFinalX == ProjectPosStartX) && (posFinalY == ProjectPosStartY)) {
+      return
+    } else {
+      e.preventDefault();
     }
   })
 })
@@ -1897,28 +1929,6 @@ window.addEventListener('scroll', function () {
   }
 
 });
-
-ymaps.ready(init);
-
-function init() {
-  var myMap = new ymaps.Map("contacts-map", {
-    center: [55.75869592169767, 37.600960811968434],
-    zoom: 17
-  }, {
-    suppressMapOpenBlock: true
-  });
-  myMap.controls.remove('largeMapDefaultSet').remove('fullscreenControl').add('geolocationControl')
-  myMap.controls.add('zoomControl', {
-    size: "small"
-  });
-  var myPlacemark = new ymaps.Placemark([55.75869592169767, 37.600960811968434], {}, {
-    iconLayout: 'default#image',
-    iconImageHref: './img/contacts/placemark.svg',
-    iconImageSize: [12, 12],
-    iconImageOffset: [0, 0]
-  });
-  myMap.geoObjects.add(myPlacemark);
-}
 
 /* resize */
 

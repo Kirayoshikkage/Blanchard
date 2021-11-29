@@ -7,17 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard</title>
   <link rel="stylesheet" href="./styles/normalize.css" type="text/css">
-  <link rel="stylesheet" href="./styles/firstContent.css" type="text/css">
   <link rel="stylesheet" href="./styles/main.css" type="text/css">
   <link rel="stylesheet" href="./styles/media.css" type="text/css">
-  <script async src="./js/json.txt">
-  </script>
+  <script src="./js/lazysizes.min.js"></script>
 </head>
 
 <body>
   <header class="header">
     <nav class="navigation header__navigation">
-      <div class="container">
+      <div class="container navigation__container">
         <div class="navigation__content">
           <button aria-label="Кнопка открытия меню" class="burger-icon navigation__burger-icon">
             <svg viewbox="0 0 36 28">
@@ -70,10 +68,10 @@
             </li>
           </ul>
           <form
-            class="search-form search-form_min-width navigation__search-form search-form_background-grey search-form_padding-bottom"
+            class="search-form search-sclose search-form_min-width navigation__search-form search-form_background-grey search-form_padding-bottom"
             action="#">
-            <button class="search-form__close-btn search-form__close-btn_transform-y" type="button">
-              <svg viewbox="0 0 36 28">
+            <button aria-label="Кнопка закрытия меню" class="search-form__close" type="button">
+              <svg class="search-form__icon search-form__icon_transform-y search-form__icon_size-middle" viewbox="0 0 36 28">
                 <use xlink:href="sprite.symbol.svg#close_burger"></use>
               </svg>
             </button>
@@ -87,8 +85,8 @@
               </svg>
             </button>
           </form>
-          <button aria-label="Кнопка поиска по сайту" class="search-open navigation__search-open" type="submit">
-            <svg class="search-open__icon search-open__icon_size-middle">
+          <button aria-label="Кнопка поиска по сайту" class="search-sclose search-open navigation__search-open" type="submit">
+            <svg class="search-sclose search-open__icon search-open__icon_size-middle">
               <use xlink:href="sprite.symbol.svg#search"></use>
             </svg>
           </button>
@@ -103,7 +101,7 @@
         </div>
       </div>
     </nav>
-    <section class="overlay header__overlay">
+    <div class="overlay header__overlay">
       <div class="container overlay__container">
         <div class="overlay__content">
           <div class="drop-menu">
@@ -207,13 +205,13 @@
               </li>
             </ul>
           </div>
-          <form aria-label="Поиск по сайту" class="search-form overlay__search-form" action="#">
+          <form class="search-form overlay__search-form" action="#">
             <label class="search-form__label">
               <input type="search" name="search"
                 class="search-form__input search-form__input_background-inherit search-form__input_placegolder search-form__input_min-width"
                 placeholder="Поиск по сайту">
             </label>
-            <button class="search-form__button overlay__button" type="submit">
+            <button aria-label="Поиск по сайте"  class="search-form__button overlay__button" type="submit">
               <svg class="search-form__icon search-form__icon_size-small" viewbox="0 0 23 22">
                 <use xlink:href="sprite.symbol.svg#search"></use>
               </svg>
@@ -221,15 +219,15 @@
           </form>
         </div>
       </div>
-    </section>
-    <section class="burger">
+    </div>
+    <div class="burger">
       <div class="container burger__container">
         <button aria-label="Кнопка закрытия меню" class="burger__close" type="button">
           <svg viewbox="0 0 36 28">
             <use xlink:href="sprite.symbol.svg#close_burger"></use>
           </svg>
         </button>
-        <ul aria-label="Меню навигации: о нас, галерея, каталог, события, издания, проекты, контакты"
+        <ul
           class="menu burger__menu menu_template-row">
           <li class="menu__item menu__item_animation">
             <a href="#about" class="menu__link smooth">
@@ -274,7 +272,7 @@
           Войти
         </button>
       </div>
-    </section>
+    </div>
   </header>
   <main class="main">
     <section class="hero">
@@ -365,8 +363,8 @@
             <p class="text gallery__text gallery__text_margin-bottom">
               Фильтр:
             </p>
-            <div aria-label="Выпадающий список" class="select">
-              <button class="select__header">
+            <div class="select">
+              <button  aria-label="Выпадающий список"  class="select__header">
                 <span class="select__current">
                   Живопись
                 </span>
@@ -387,17 +385,17 @@
           </div>
           <div class="gallery__item gallery__item_slider">
             <div class="slider gallery__slider">
-              <div aria-label="Слайды, при нажатии на слайд откроется подробная информация о картине."
+              <div
                 class="slider__list gallery__list slider__list_padding-top">
                 <div class="slider__track slider__track_tempalte-columns slider__track_tempalte-rows gallery__track">
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/1.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/1_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/1_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/1_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/1.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/1.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/1_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/1_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/1_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/1.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -408,11 +406,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/2.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/2_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/2_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/2_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/2.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/2.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/2_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/2_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/2_mobile.webp">
+                      <img class="gallery__img lazyload " src="#" data-srcset="./img/gallery/2.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -423,11 +421,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/3.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/3_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/3_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/3_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/3.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/3.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/3_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/3_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/3_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/3.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -450,11 +448,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/4.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/4_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/4_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/4_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/4.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/4.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/4_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/4_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/4_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/4.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -465,11 +463,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/5.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/5_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/5_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/5_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/5.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/5.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/5_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/5_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/5_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/5.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -480,11 +478,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/6.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/6_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/6_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/6_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/6.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/6.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/6_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/6_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/6_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/6.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -495,11 +493,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/7.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/7_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/7_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/7_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/7.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/7.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/7_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/7_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/7_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/7.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -510,11 +508,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/8.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/8_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/8_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/8_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/8.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/8.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/8_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/8_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/8_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/8.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -525,11 +523,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/9.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/9_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/9_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/gallery/9_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/9.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/9.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/9_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/9_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/9_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/9.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -540,11 +538,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/10.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/10_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/10_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/10_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/10.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/10.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/10_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/10_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/10_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/10.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -555,11 +553,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/11.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/11_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/11_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/11_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/11.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/11.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/11_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/11_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/11_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/11.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -570,11 +568,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/12.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/12_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/12_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/12_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/12.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/12.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/12_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/12_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/12_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/12.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -585,11 +583,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/13.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/13_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/13_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/13_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/13.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/13.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/13_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/13_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/13_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/13.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -600,11 +598,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/14.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/14_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/14_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/14_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/14.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/14.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/14_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/14_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/14_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/14.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -615,11 +613,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/15.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/15_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/15_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/15_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/15.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/15.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/15_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/15_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/15_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/15.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -630,11 +628,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/16.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/16_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/16_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/16_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/16.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/16.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/16_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/16_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/16_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/16.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -645,11 +643,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/17.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/17_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/17_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/17_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/17.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/17.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/17_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/17_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/17_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/17.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -660,11 +658,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/18.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/18_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/18_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/18_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/18.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/18.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/18_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/18_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/18_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/18.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -675,11 +673,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/19.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/19_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/19_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/19_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/19.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/19.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/19_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/19_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/19_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/19.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -690,11 +688,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/20.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/20_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/20_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/20_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/20.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/20.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/20_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/20_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/20_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/20.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -705,11 +703,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/21.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/21_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/21_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/21_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/21.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/21.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/21_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/21_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/21_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/21.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -720,11 +718,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/22.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/22_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/22_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/22_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/22.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/22.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/22_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/22_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/22_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/22.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -735,11 +733,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/23.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/23_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/23_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/23_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/23.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/23.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/23_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/23_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/23_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/23.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -750,11 +748,11 @@
                   <button
                     class="slider__slide slider__slide_animation slider__slide_size-middle gallery__slide gallery__slide_animation popup-trigger ">
                     <picture>
-                      <source media="(min-width: 1401px)" srcset="./img/gallery/24.webp">
-                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/gallery/24_middle.webp">
-                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/gallery/24_min.webp">
-                      <source media="(max-width: 767px) and (min-width:0px)" srcset="./img/gallery/24_mobile.webp">
-                      <img class="gallery__img" src="./img/gallery/24.webp" alt="">
+                      <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/gallery/24.webp">
+                      <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/gallery/24_middle.webp">
+                      <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/gallery/24_min.webp">
+                      <source media="(max-width: 767px) and (min-width:0px)" srcset="#" data-srcset="./img/gallery/24_mobile.webp">
+                      <img class="gallery__img lazyload" src="#" data-srcset="./img/gallery/24.webp" alt="">
                     </picture>
                     <span class="popup-info popup-info_hidden">
                       <span class="subtitle">
@@ -764,8 +762,8 @@
                   </button>
                 </div>
               </div>
-              <div aria-label="Кнопки переключения слайдов." class="slider__arrows gallery__arrows">
-                <button type="button" class="slider__prev gallery__prev">
+              <div  class="slider__arrows gallery__arrows">
+                <button aria-label="Кнопка назад" type="button" class="slider__prev gallery__prev">
                   <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z"
@@ -775,7 +773,7 @@
                     <path d="M16 20L11 15L16 10" stroke="white" />
                   </svg>
                 </button>
-                <button type="button" class="slider__next gallery__next">
+                <button aria-label="Кнопка вперед" type="button" class="slider__next gallery__next">
                   <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
@@ -786,7 +784,7 @@
                   </svg>
                 </button>
               </div>
-              <span aria-label="Количество страниц со слайдами" class="slider__counter gallery__counter">
+              <span class="slider__counter gallery__counter">
                 <span class="slider__first gallery__first">1</span>
                 /
                 <span class="slider__last gallery__last"></span>
@@ -807,41 +805,41 @@
         <h2 class="title сatalog__title title_margin-bottom">
           Каталог
         </h2>
-        <div aria-label="Кнопки переключения стран: Франция, Германия, Италия, Россия, Бельгия"
+        <div
           class="сatalog__triggers">
-          <a href="#France" class="сatalog__trigger">
+          <a aria-label="Франция" href="#France" class="сatalog__trigger">
             <picture>
-              <source media="(min-width: 768px)" srcset="./img/catalog/fr.webp">
-              <source media="(max-width: 768px) and (min-width:0px)" srcset="./img/catalog/fr_min.webp">
-              <img src="./img/catalog/fr.webp" alt="">
+              <source media="(min-width: 768px)" srcset="#" data-srcset="./img/catalog/fr.webp">
+              <source media="(max-width: 768px) and (min-width:0px)" srcset="#" data-srcset="./img/catalog/fr_min.webp">
+              <img class="lazyload" src="#" data-srcset="./img/catalog/fr.webp" alt="">
             </picture>
           </a>
-          <a href="#Germany" class="сatalog__trigger">
+          <a aria-label="Германия" href="#Germany" class="сatalog__trigger">
             <picture>
-              <source media="(min-width: 768px)" srcset="./img/catalog/gr.webp">
-              <source media="(max-width: 768px) and (min-width:0px)" srcset="./img/catalog/ger_min.webp">
-              <img src="./img/catalog/gr.webp" alt="">
+              <source media="(min-width: 768px)" srcset="#" data-srcset="./img/catalog/gr.webp">
+              <source media="(max-width: 768px) and (min-width:0px)" srcset="#" data-srcset="./img/catalog/ger_min.webp">
+              <img class="lazyload" src="#" data-srcset="./img/catalog/gr.webp" alt="">
             </picture>
           </a>
-          <a href="#Italy" class="сatalog__trigger сatalog__trigger_active">
+          <a aria-label="Италия" href="#Italy" class="сatalog__trigger сatalog__trigger_active">
             <picture>
-              <source media="(min-width: 768px)" srcset="./img/catalog/it.webp">
-              <source media="(max-width: 768px) and (min-width:0px)" srcset="./img/catalog/it_min.webp">
-              <img src="./img/catalog/it.webp" alt="">
+              <source media="(min-width: 768px)" srcset="#" data-srcset="./img/catalog/it.webp">
+              <source media="(max-width: 768px) and (min-width:0px)" srcset="#" data-srcset="./img/catalog/it_min.webp">
+              <img class="lazyload" src="#" data-srcset="./img/catalog/it.webp" alt="">
             </picture>
           </a>
-          <a href="#Russia" class="сatalog__trigger">
+          <a aria-label="Россия" href="#Russia" class="сatalog__trigger">
             <picture>
-              <source media="(min-width: 768px)" srcset="./img/catalog/ru.webp">
-              <source media="(max-width: 768px) and (min-width:0px)" srcset="./img/catalog/ru_min.webp">
-              <img src="./img/catalog/ru.webp" alt="">
+              <source media="(min-width: 768px)" srcset="#" data-srcset="./img/catalog/ru.webp">
+              <source media="(max-width: 768px) and (min-width:0px)" srcset="#" data-srcset="./img/catalog/ru_min.webp">
+              <img class="lazyload" src="#" data-srcset="./img/catalog/ru.webp" alt="">
             </picture>
           </a>
-          <a href="#Belgium" class="сatalog__trigger">
+          <a aria-label="Бельгия" href="#Belgium" class="сatalog__trigger">
             <picture>
-              <source media="(min-width: 768px)" srcset="./img/catalog/bel.webp">
-              <source media="(max-width: 768px) and (min-width:0px)" srcset="./img/catalog/bel_min.webp">
-              <img src="./img/catalog/bel.webp" alt="">
+              <source media="(min-width: 768px)" srcset="#" data-srcset="./img/catalog/bel.webp">
+              <source media="(max-width: 768px) and (min-width:0px)" srcset="#" data-srcset="./img/catalog/bel_min.webp">
+              <img class="lazyload" src="#" data-srcset="./img/catalog/bel.webp" alt="">
             </picture>
           </a>
         </div>
@@ -857,7 +855,7 @@
             <div class="country__content">
               <div class="country__item country__item_one">
                 <div class="tabs tabs-france tabs-france_active">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1075,7 +1073,7 @@
             <div class="country__content">
               <div class="country__item country__item_one">
                 <div class="tabs tabs-germany tabs-germany_active">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1293,7 +1291,7 @@
             <div class="country__content">
               <div class="country__item country__item_one">
                 <div id="person-1" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1305,7 +1303,7 @@
                   </a>
                 </div>
                 <div id="person-2" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1317,7 +1315,7 @@
                   </a>
                 </div>
                 <div id="person-3" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1329,7 +1327,7 @@
                   </a>
                 </div>
                 <div id="person-4" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1341,7 +1339,7 @@
                   </a>
                 </div>
                 <div id="person-5" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1353,7 +1351,7 @@
                   </a>
                 </div>
                 <div id="person-6" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1365,7 +1363,7 @@
                   </a>
                 </div>
                 <div id="person-7" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1377,7 +1375,7 @@
                   </a>
                 </div>
                 <div id="person-8" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1389,7 +1387,7 @@
                   </a>
                 </div>
                 <div id="person-9" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1401,7 +1399,7 @@
                   </a>
                 </div>
                 <div id="person-10" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1413,7 +1411,7 @@
                   </a>
                 </div>
                 <div id="person-11" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1426,11 +1424,11 @@
                 </div>
                 <div id="person-12" class="tabs tabs-italy tabs-italy_active">
                   <picture>
-                    <source media="(min-width: 1201px)" srcset="./img/catalog/da.webp">
-                    <source media="(max-width: 1200px) and (min-width:1024px)" srcset="./img/catalog/da_middle.webp">
-                    <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/catalog/da_min.webp">
-                    <source media="(max-width: 768px) and (min-width:0px)" srcset="./img/catalog/da_mobily.webp">
-                    <img class="tabs__painter" src="./img/catalog/da.webp" alt="Доменико Гирландайо">
+                    <source media="(min-width: 1201px)" srcset="#" data-srcset="./img/catalog/da.webp">
+                    <source media="(max-width: 1200px) and (min-width:1024px)" srcset="#" data-srcset="./img/catalog/da_middle.webp">
+                    <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/catalog/da_min.webp">
+                    <source media="(max-width: 768px) and (min-width:0px)" srcset="#" data-srcset="./img/catalog/da_mobily.webp">
+                    <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.webp" alt="Доменико Гирландайо">
                   </picture>
                   <h3 class="subtitle tabs__subtitle">
                     Доменико Гирландайо
@@ -1449,7 +1447,7 @@
                   </p>
                 </div>
                 <div id="person-13" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1461,7 +1459,7 @@
                   </a>
                 </div>
                 <div id="person-14" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1473,7 +1471,7 @@
                   </a>
                 </div>
                 <div id="person-15" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1485,7 +1483,7 @@
                   </a>
                 </div>
                 <div id="person-16" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1497,7 +1495,7 @@
                   </a>
                 </div>
                 <div id="person-17" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1509,7 +1507,7 @@
                   </a>
                 </div>
                 <div id="person-18" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1521,7 +1519,7 @@
                   </a>
                 </div>
                 <div id="person-19" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1533,7 +1531,7 @@
                   </a>
                 </div>
                 <div id="person-20" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1545,7 +1543,7 @@
                   </a>
                 </div>
                 <div id="person-21" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1557,7 +1555,7 @@
                   </a>
                 </div>
                 <div id="person-22" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1569,7 +1567,7 @@
                   </a>
                 </div>
                 <div id="person-23" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1581,7 +1579,7 @@
                   </a>
                 </div>
                 <div id="person-24" class="tabs tabs-italy">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -1860,7 +1858,7 @@
             <div class="country__content">
               <div class="country__item country__item_one">
                 <div class="tabs tabs-russia tabs-russia_active">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -2078,7 +2076,7 @@
             <div class="country__content">
               <div class="country__item country__item_one">
                 <div class="tabs tabs-belgium tabs-belgium_active">
-                  <img class="tabs__painter" src="./img/catalog/da.svg" alt="">
+                  <img class="tabs__painter lazyload" src="#" data-srcset="./img/catalog/da.svg" alt="">
                   <h3 class="subtitle tabs__subtitle">
                     Что мы о нём знаем?
                   </h3>
@@ -2306,12 +2304,12 @@
               <div class="developments__item developments__slide" data-open="true">
                 <div class="developments__body">
                   <picture>
-                    <source media="(min-width: 1201px)" srcset="./img/developments/1.webp">
-                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                      srcset="./img/developments/1_middle.webp">
-                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="./img/developments/1_min.webp">
-                    <source media="(max-width:767px) and (min-width: 0px)" srcset="./img/developments/1_middle.webp">
-                    <img src="./img/developments/1.webp" alt="">
+                    <source media="(min-width: 1201px)"  srcset="#" data-srcset="./img/developments/1.webp">
+                    <source media="(max-width:1200px) and (min-width: 1024px)" srcset="#"
+                    data-srcset="./img/developments/1_middle.webp">
+                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="#"  data-srcset="./img/developments/1_min.webp">
+                    <source media="(max-width:767px) and (min-width: 0px)" srcset="#"  data-srcset="./img/developments/1_middle.webp">
+                    <img class="lazyload" src="#" data-srcset="./img/developments/1.webp" alt="">
                   </picture>
                   <div class="developments__content">
                     <span class="date developments__date">
@@ -2335,12 +2333,12 @@
               <div class="developments__item developments__slide" data-open="true">
                 <div class="developments__body">
                   <picture>
-                    <source media="(min-width: 1201px)" srcset="./img/developments/2.webp">
-                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                      srcset="./img/developments/2_middle.webp">
-                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="./img/developments/2_min.webp">
-                    <source media="(max-width:767px) and (min-width: 0px)" srcset="./img/developments/2_middle.webp">
-                    <img src="./img/developments/2.webp" alt="">
+                    <source media="(min-width: 1201px)" srcset="#" data-srcset="./img/developments/2.webp">
+                    <source media="(max-width:1200px) and (min-width: 1024px)" srcset="#"
+                    data-srcset="./img/developments/2_middle.webp">
+                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="#" data-srcset="./img/developments/2_min.webp">
+                    <source media="(max-width:767px) and (min-width: 0px)" srcset="#" data-srcset="./img/developments/2_middle.webp">
+                    <img class="lazyload" src="#" data-srcset="./img/developments/2.webp" alt="">
                   </picture>
                   <div class="developments__content">
                     <span class="date developments__date">
@@ -2363,12 +2361,12 @@
               <div class="developments__item developments__slide" data-open="true">
                 <div class="developments__body">
                   <picture>
-                    <source media="(min-width: 1201px)" srcset="./img/developments/3.webp">
-                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                      srcset="./img/developments/3_middle.webp">
-                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="./img/developments/3_min.webp">
-                    <source media="(max-width:767px) and (min-width: 0px)" srcset="./img/developments/3_middle.webp">
-                    <img src="./img/developments/3.webp" alt="">
+                    <source media="(min-width: 1201px)" srcset="#" data-srcset="./img/developments/3.webp">
+                    <source media="(max-width:1200px) and (min-width: 1024px)" srcset="#"
+                    data-srcset="./img/developments/3_middle.webp">
+                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="#" data-srcset="./img/developments/3_min.webp">
+                    <source media="(max-width:767px) and (min-width: 0px)" srcset="#" data-srcset="./img/developments/3_middle.webp">
+                    <img class="lazyload" src="#" data-srcset="./img/developments/3.webp" alt="">
                   </picture>
                   <div class="developments__content">
                     <span class="date developments__date">
@@ -2392,12 +2390,12 @@
               <div class="developments__item developments__slide">
                 <div class="developments__body">
                   <picture>
-                    <source media="(min-width: 1201px)" srcset="./img/developments/4.webp">
-                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                      srcset="./img/developments/4_middle.webp">
-                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="./img/developments/4_min.webp">
-                    <source media="(max-width:767px) and (min-width: 0px)" srcset="./img/developments/4_middle.webp">
-                    <img src="./img/developments/4.webp" alt="">
+                    <source media="(min-width: 1201px)" srcset="#" data-srcset="./img/developments/4.webp">
+                    <source media="(max-width:1200px) and (min-width: 1024px)" srcset="#"
+                    data-srcset="./img/developments/4_middle.webp">
+                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="#" data-srcset="./img/developments/4_min.webp">
+                    <source media="(max-width:767px) and (min-width: 0px)" srcset="#" data-srcset="./img/developments/4_middle.webp">
+                    <img class="lazyload" src="#" data-srcset="./img/developments/4.webp" alt="">
                   </picture>
                   <div class="developments__content">
                     <span class="date developments__date">
@@ -2419,12 +2417,12 @@
               <div class="developments__item developments__slide">
                 <div class="developments__body">
                   <picture>
-                    <source media="(min-width: 1201px)" srcset="./img/developments/5.webp">
-                    <source media="(max-width:1200px) and (min-width: 1024px)"
-                      srcset="./img/developments/5_middle.webp">
-                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="./img/developments/5_min.webp">
-                    <source media="(max-width:767px) and (min-width: 0px)" srcset="./img/developments/5_middle.webp">
-                    <img src="./img/developments/5.webp" alt="">
+                    <source media="(min-width: 1201px)" srcset="#" data-srcset="./img/developments/5.webp">
+                    <source media="(max-width:1200px) and (min-width: 1024px)" srcset="#"
+                    data-srcset="./img/developments/5_middle.webp">
+                    <source media="(max-width:1023px) and (min-width: 768px)" srcset="#" data-srcset="./img/developments/5_min.webp">
+                    <source media="(max-width:767px) and (min-width: 0px)" srcset="#" data-srcset="./img/developments/5_middle.webp">
+                    <img class="lazyload" src="#" data-srcset="./img/developments/5.webp" alt="">
                   </picture>
                   <div class="developments__content">
                     <span class="date developments__date">
@@ -2567,11 +2565,11 @@
                 <div class="slider__track slider__track_flex-container editions__track">
                   <div class="slider__slide slider__slide_size-hight slider__slide_shrink editions__slide">
                     <picture>
-                      <source media="(min-width: 1521px)" srcset="./img/editions/1.webp">
+                      <source media="(min-width: 1521px)" srcset="#" data-srcset="./img/editions/1.webp">
                       <source media="(max-width: 1520px) and (min-width:768px)"
-                        srcset="./img/editions/1_middle_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/editions/1_mobile.webp">
-                      <img class="editions__img" src="./img/editions/1.webp" alt="">
+                      srcset="#" data-srcset="./img/editions/1_middle_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/editions/1_mobile.webp">
+                      <img class="editions__img lazyload" src="#" data-srcset="./img/editions/1.webp" alt="">
                     </picture>
                     <div class="editions__name">
                       <p class="editions__text editions__text_margin-bottom">
@@ -2590,11 +2588,11 @@
                   </div>
                   <div class="slider__slide slider__slide_size-hight slider__slide_shrink editions__slide">
                     <picture>
-                      <source media="(min-width: 1521px)" srcset="./img/editions/2.webp">
+                      <source media="(min-width: 1521px)" srcset="#" data-srcset="./img/editions/2.webp">
                       <source media="(max-width: 1520px) and (min-width:768px)"
-                        srcset="./img/editions/2_middle_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/editions/2_mobile.webp">
-                      <img class="editions__img" src="./img/editions/2.webp" alt="">
+                      srcset="#" data-srcset="./img/editions/2_middle_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/editions/2_mobile.webp">
+                      <img class="editions__img lazyload" src="#" data-srcset="./img/editions/2.webp" alt="">
                     </picture>
                     <div class="editions__name">
                       <p class="editions__text editions__text_margin-bottom">
@@ -2613,11 +2611,11 @@
                   </div>
                   <div class="slider__slide slider__slide_size-hight slider__slide_shrink editions__slide">
                     <picture>
-                      <source media="(min-width: 1521px)" srcset="./img/editions/3.webp">
+                      <source media="(min-width: 1521px)" srcset="#" data-srcset="./img/editions/3.webp">
                       <source media="(max-width: 1520px) and (min-width:768px)"
-                        srcset="./img/editions/3_middle_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/editions/3_mobile.webp">
-                      <img class="editions__img" src="./img/editions/3.webp" alt="">
+                      srcset="#" data-srcset="./img/editions/3_middle_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/editions/3_mobile.webp">
+                      <img class="editions__img lazyload" src="#" data-srcset="./img/editions/3.webp" alt="">
                     </picture>
                     <div class="editions__name">
                       <p class="editions__text editions__text_margin-bottom">
@@ -2636,11 +2634,11 @@
                   </div>
                   <div class="slider__slide slider__slide_size-hight slider__slide_shrink editions__slide">
                     <picture>
-                      <source media="(min-width: 1521px)" srcset="./img/editions/4.webp">
+                      <source media="(min-width: 1521px)" srcset="#" data-srcset="./img/editions/4.webp">
                       <source media="(max-width: 1520px) and (min-width:768px)"
-                        srcset="./img/editions/4_middle_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/editions/4_mobile.webp">
-                      <img class="editions__img" src="./img/editions/4.webp" alt="">
+                      srcset="#" data-srcset="./img/editions/4_middle_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/editions/4_mobile.webp">
+                      <img class="editions__img lazyload" src="#" data-srcset="./img/editions/4.webp" alt="">
                     </picture>
                     <div class="editions__name">
                       <p class="editions__text editions__text_margin-bottom">
@@ -2659,11 +2657,11 @@
                   </div>
                   <div class="slider__slide slider__slide_size-hight slider__slide_shrink editions__slide">
                     <picture>
-                      <source media="(min-width: 1521px)" srcset="./img/editions/5.webp">
+                      <source media="(min-width: 1521px)" srcset="#" data-srcset="./img/editions/5.webp">
                       <source media="(max-width: 1520px) and (min-width:768px)"
-                        srcset="./img/editions/5_middle_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/editions/5_mobile.webp">
-                      <img class="editions__img" src="./img/editions/5.webp" alt="">
+                      srcset="#" data-srcset="./img/editions/5_middle_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/editions/5_mobile.webp">
+                      <img class="editions__img lazyload" src="#" data-srcset="./img/editions/5.webp" alt="">
                     </picture>
                     <div class="editions__name">
                       <p class="editions__text editions__text_margin-bottom">
@@ -2682,11 +2680,11 @@
                   </div>
                   <div class="slider__slide slider__slide_size-hight slider__slide_shrink editions__slide">
                     <picture>
-                      <source media="(min-width: 1521px)" srcset="./img/editions/6.webp">
+                      <source media="(min-width: 1521px)" srcset="#" data-srcset="./img/editions/6.webp">
                       <source media="(max-width: 1520px) and (min-width:768px)"
-                        srcset="./img/editions/6_middle_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/editions/6_mobile.webp">
-                      <img class="editions__img" src="./img/editions/6.webp" alt="">
+                      srcset="#" data-srcset="./img/editions/6_middle_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/editions/6_mobile.webp">
+                      <img class="editions__img lazyload" src="#" data-srcset="./img/editions/6.webp" alt="">
                     </picture>
                     <div class="editions__name">
                       <p class="editions__text editions__text_margin-bottom">
@@ -2705,11 +2703,11 @@
                   </div>
                   <div class="slider__slide slider__slide_size-hight slider__slide_shrink editions__slide">
                     <picture>
-                      <source media="(min-width: 1521px)" srcset="./img/editions/7.webp">
+                      <source media="(min-width: 1521px)" srcset="#" data-srcset="./img/editions/7.webp">
                       <source media="(max-width: 1520px) and (min-width:768px)"
-                        srcset="./img/editions/7_middle_min.webp">
-                      <source media="(max-width:767px) and (min-width:0px)" srcset="./img/editions/7_mobile.webp">
-                      <img class="editions__img" src="./img/editions/7.webp" alt="">
+                      srcset="#" data-srcset="./img/editions/7_middle_min.webp">
+                      <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/editions/7_mobile.webp">
+                      <img class="editions__img lazyload" src="#" data-srcset="./img/editions/7.webp" alt="">
                     </picture>
                     <div class="editions__name">
                       <p class="editions__text editions__text_margin-bottom">
@@ -2728,8 +2726,8 @@
                   </div>
                 </div>
               </div>
-              <div aria-label="Кнопки переключения слайдов" class="slider__arrows editions__arrows">
-                <button type="button" class="slider__prev editions__prev">
+              <div class="slider__arrows editions__arrows">
+                <button aria-label="Кнопка назад"  type="button" class="slider__prev editions__prev">
                   <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z"
@@ -2739,7 +2737,7 @@
                     <path d="M16 20L11 15L16 10" stroke="white" />
                   </svg>
                 </button>
-                <button type="button" class="slider__next editions__next">
+                <button aria-label="Кнопка вперед"  type="button" class="slider__next editions__next">
                   <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M15 30C23.2843 30 30 23.2843 30 15C30 6.71573 23.2843 -1.01779e-06 15 -6.55671e-07C6.71573 -2.93554e-07 2.93554e-07 6.71573 6.55671e-07 15C1.01779e-06 23.2843 6.71573 30 15 30Z"
@@ -2750,7 +2748,7 @@
                   </svg>
                 </button>
               </div>
-              <span aria-label="Количество страниц со слайдами" class="slider__counter editions__counter">
+              <span class="slider__counter editions__counter">
                 <span class="slider__first editions__first">1</span>
                 /
                 <span class="slider__last editions__last"></span>
@@ -2830,92 +2828,92 @@
           Партнёры проектов:
         </h3>
         <div class="slider project__slider">
-          <div aria-label="Слайды" class="slider__list project__list">
+          <div class="slider__list project__list">
             <div class="slider__track project__track">
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/1_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/1_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/1_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/1_mobile.webp">
-                  <img class="project__img" src="./img/project/1_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/1_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/1_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/1_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/1_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/1_hight.webp" alt="">
                 </picture>
               </a>
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/2_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/2_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/2_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/2_mobile.webp">
-                  <img class="project__img" src="./img/project/2_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/2_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/2_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/2_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/2_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/2_hight.webp" alt="">
                 </picture>
               </a>
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/3_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/3_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/3_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/3_mobile.webp">
-                  <img class="project__img" src="./img/project/3_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/3_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/3_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/3_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/3_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/3_hight.webp" alt="">
                 </picture>
               </a>
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/4_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/4_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/4_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/4_mobile.webp">
-                  <img class="project__img" src="./img/project/4_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/4_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/4_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/4_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/4_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/4_hight.webp" alt="">
                 </picture>
               </a>
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/5_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/5_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/5_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/5_mobile.webp">
-                  <img class="project__img" src="./img/project/5_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/5_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/5_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/5_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/5_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/5_hight.webp" alt="">
                 </picture>
               </a>
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/6_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/6_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/6_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/6_mobile.webp">
-                  <img class="project__img" src="./img/project/6_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/6_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/6_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/6_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/6_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/6_hight.webp" alt="">
                 </picture>
               </a>
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/7_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/7_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/7_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/7_mobile.webp">
-                  <img class="project__img" src="./img/project/7_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/7_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/7_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/7_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/7_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/7_hight.webp" alt="">
                 </picture>
               </a>
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/8_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/8_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/8_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/8_mobile.webp">
-                  <img class="project__img" src="./img/project/8_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/8_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/8_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/8_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/8_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/8_hight.webp" alt="">
                 </picture>
               </a>
-              <a class="slider__slide project__slide">
+              <a href="#" draggable="false" target="_blank" class="slider__slide project__slide">
                 <picture>
-                  <source media="(min-width: 1401px)" srcset="./img/project/9_hight.webp">
-                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="./img/project/9_middle.webp">
-                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="./img/project/9_min.webp">
-                  <source media="(max-width:767px) and (min-width:0px)" srcset="./img/project/9_mobile.webp">
-                  <img class="project__img" src="./img/project/9_hight.webp" alt="">
+                  <source media="(min-width: 1401px)" srcset="#" data-srcset="./img/project/9_hight.webp">
+                  <source media="(max-width: 1400px) and (min-width:1024px)" srcset="#" data-srcset="./img/project/9_middle.webp">
+                  <source media="(max-width: 1024px) and (min-width:768px)" srcset="#" data-srcset="./img/project/9_min.webp">
+                  <source media="(max-width:767px) and (min-width:0px)" srcset="#" data-srcset="./img/project/9_mobile.webp">
+                  <img class="project__img lazyload" src="#" data-srcset="./img/project/9_hight.webp" alt="">
                 </picture>
               </a>
             </div>
           </div>
-          <div aria-label="Кнопки переключения слайдов" class="project__arrows">
+          <div class="project__arrows">
             <button type="button" class="slider__prev project__prev">
               <svg width="30" height="30" viewbox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -2957,11 +2955,11 @@
               Заказать обратный звонок
             </h3>
             <form action="mail.php" enctype="multipart/form-data" method="POST" class="contacts__form">
-              <label aria-label="Поле для ввода имени" class="contacts__label" for="name">
+              <label class="contacts__label" for="name">
                 <input id="name" data-validate-field="name" class="contacts__input" type="text" name="name"
                   placeholder="Имя*">
               </label>
-              <label aria-label="Поле для ввода телефона" class="contacts__label" for="tel">
+              <label class="contacts__label" for="tel">
                 <input id="tel" data-validate-field="tel" class="contacts__input" type="tel" name="phone"
                   placeholder="Телефон*">
               </label>
@@ -2973,15 +2971,15 @@
               Связаться в один клик
             </h3>
             <ul class="socials contacts__socials">
-              <li aria-label="Ссылка на whatsapp" class="socials__item">
-                <a href="#" class="socials__link contacts__link">
+              <li class="socials__item socials__item_margin-right">
+                <a aria-label="Ссылка на whatsapp" href="#" class="socials__link contacts__link">
                   <svg class="socials__svg contacts__svg" viewbox="0 0 40 40">
                     <use xlink:href="sprite.symbol.svg#whatsapp"></use>
                   </svg>
                 </a>
               </li>
-              <li aria-label="Ссылка на telegram" class="socials__item">
-                <a href="#" class="socials__link contacts__link">
+              <li class="socials__item socials__item_margin-right">
+                <a aria-label="Ссылка на telegram" href="#" class="socials__link contacts__link">
                   <svg class="socials__svg contacts__svg" viewbox="0 0 40 40">
                     <use xlink:href="sprite.symbol.svg#telegram"></use>
                   </svg>
@@ -3002,29 +3000,29 @@
       <div class="footer__content">
         <a>
           <picture>
-            <source media="(min-width: 1201px)" srcset="./img/header/logo_hight.webp">
-            <source media="(max-width: 1200px) and (min-width:768px)" srcset="./img/header/logo_middle.webp">
-            <source media="(max-width: 767.98px) and (min-width:0px)" srcset="./img/header/logo_min.webp">
-            <img class="logo" src="./img/header/logo_hight.webp" alt="Логотип">
+            <source media="(min-width: 1201px)" srcset="#" data-srcset="./img/header/logo_hight.webp">
+            <source media="(max-width: 1200px) and (min-width:768px)" srcset="#" data-srcset="./img/header/logo_middle.webp">
+            <source media="(max-width: 767.98px) and (min-width:0px)" srcset="#" data-srcset="./img/header/logo_min.webp">
+            <img class="logo footer__logo lazyload" src="#" data-srcset="./img/header/logo_hight.webp" alt="Логотип">
           </picture>
         </a>
         <ul class="socials">
-          <li aria-label="Ссылка на вконтакте" class="socials__item footer__item">
-            <a href="#" class="socials__link footer__link">
+          <li class="socials__item footer__item">
+            <a aria-label="Ссылка на вконтакте" href="#" class="socials__link footer__link">
               <svg class="socials__svg footer__svg" viewbox="0 0 45 45">
                 <use xlink:href="sprite.symbol.svg#Vector"></use>
               </svg>
             </a>
           </li>
-          <li aria-label="Ссылка на instagram" class="socials__item footer__item">
-            <a href="#" class="socials__link footer__link">
+          <li class="socials__item footer__item">
+            <a aria-label="Ссылка на instagram" href="#" class="socials__link footer__link">
               <svg class="socials__svg footer__svg" viewbox="0 0 45 45">
                 <use xlink:href="sprite.symbol.svg#instagram"></use>
               </svg>
             </a>
           </li>
-          <li aria-label="Ссылка на facebook" class="socials__item footer__item">
-            <a href="#" class="socials__link footer__link">
+          <li class="socials__item footer__item">
+            <a aria-label="Ссылка на facebook" href="#" class="socials__link footer__link">
               <svg class="socials__svg footer__svg" viewbox="0 0 45 45">
                 <use xlink:href="sprite.symbol.svg#fb"></use>
               </svg>
@@ -3035,11 +3033,14 @@
     </div>
   </footer>
 
-  <script src="./js/just-validate.min.js"></script>
+  <script src="./js/json.txt">
+  </script>
+  <script src="./js/map.js"></script>
   <script src="./js/gsap.min.js"></script>
+  <script src="./js/just-validate.min.js"></script>
   <script src="./js/simplebar.min.js"></script>
   <script src="./js/inputmask.min.js"></script>
-  <script src="./js/main.js"></script>
+  <script async src="./js/main.js"></script>
 </body>
 
 </html>

@@ -59,7 +59,8 @@
 .accordion__svg {
   width: 50px;
   height: 50px;
-  transition: transform .6s;
+  transition-property: transform,fill;
+  transition-duration: .6s;
   fill: #ECECEC
 }
 

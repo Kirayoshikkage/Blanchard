@@ -184,6 +184,10 @@
     max-width: 818px;
   }
 
+  .project__img {
+    max-width: 382px;
+  }
+
   /***************************contacts***************************/
   .map {
     max-width: 750px;
@@ -225,24 +229,17 @@
   }
 
   .search-form__icon_size-middle,
-.search-open__icon_size-middle,
-.search-form__close-btn {
+.search-open__icon_size-middle {
     width: 26px;
     height: 26px;
   }
 
-  .search-form__close-btn {
-    margin-left: 8px;
-  }
-
-  .search-open,
-.search-form__close-btn_transform-y {
-    fill: #fff;
+  .search-open {
+    fill: white;
   }
 
   .search-form__icon_transform-y,
-.search-form__input_transform-y,
-.search-form__close-btn_transform-y {
+.search-form__input_transform-y {
     transform: translateY(4px);
   }
 
@@ -280,7 +277,7 @@
     height: 29px;
     position: absolute;
     top: 36px;
-    fill: #fff;
+    fill: white;
   }
 
   .burger__container {
@@ -298,7 +295,7 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 65px;
-    color: #fff;
+    color: white;
   }
 
   .burger__login {
@@ -415,7 +412,7 @@
   }
 
   .socials__item:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 30px;
   }
 
   .contacts__svg {
@@ -442,8 +439,14 @@
     height: 60px;
   }
 
-  .footer_content {
+  .footer__content {
     padding: 38.5px 0;
+  }
+
+  .footer__logo {
+    max-width: 173px;
+    max-height: 39px;
+    transform: translateY(2px);
   }
 }
 @media (max-width: 1023.98px) {
@@ -453,8 +456,7 @@
 
   /***************************header***************************/
   .search-form__icon_size-middle,
-.search-open__icon_size-middle,
-.search-form__close-btn {
+.search-open__icon_size-middle {
     width: 27px;
     height: 27px;
   }
@@ -478,6 +480,11 @@
   }
   .search-form__label::before {
     bottom: -6px;
+  }
+
+  .search-form__close {
+    margin-left: 10px;
+    display: block;
   }
 
   /***************************gallery***************************/
@@ -651,6 +658,10 @@
     margin-bottom: 25px;
   }
 
+  .project__img {
+    max-width: 262px;
+  }
+
   .project__arrows {
     top: 30%;
   }
@@ -658,6 +669,13 @@
   /***************************contacts***************************/
   .map {
     max-width: 338px;
+  }
+
+  /***************************footer***************************/
+  .footer__logo {
+    width: 173px;
+    height: 39px;
+    transform: translateY(0);
   }
 }
 @media (max-width: 767.98px) {
@@ -675,8 +693,7 @@
   }
 
   .search-form__icon_size-middle,
-.search-open__icon_size-middle,
-.search-form__close-btn {
+.search-open__icon_size-middle {
     width: 18px;
     height: 18px;
   }
@@ -699,7 +716,7 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 32px;
-    color: #fff;
+    color: white;
   }
 
   .burger__login {
@@ -714,7 +731,7 @@
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
-    color: #fff;
+    color: white;
   }
 
   .login__icon {
@@ -740,7 +757,7 @@
     font-weight: 700;
     font-size: 12px;
     line-height: 16px;
-    color: #fff;
+    color: white;
   }
 
   .hero__content {
@@ -757,7 +774,7 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: #fff;
+    color: white;
     max-width: 265px;
     margin-bottom: 37px;
   }
@@ -766,7 +783,7 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 36px;
-    color: #fff;
+    color: white;
     margin-bottom: 14px;
     max-width: 258px;
   }
@@ -831,6 +848,12 @@
     margin-right: 0;
   }
 
+  .gallery__slide_animation:hover::before {
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
+
   .slider__track_tempalte-columns {
     grid-template-columns: repeat(24, 1fr);
     grid-template-rows: 1fr;
@@ -860,12 +883,6 @@
     top: 105%;
     left: 43%;
     height: 23px;
-  }
-
-  .gallery__slide_animation:hover::before::before {
-    width: 260px;
-    margin: 15px;
-    height: 337px;
   }
 
   .popup__content {
@@ -1167,7 +1184,7 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: #fff;
+    color: white;
   }
 
   .editions__text_style {
@@ -1198,7 +1215,7 @@
 
   /***************************project***************************/
   .project {
-    margin-bottom: 50px;
+    margin-bottom: 48px;
   }
 
   .project__list {
@@ -1222,12 +1239,16 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
-    color: #fff;
+    color: white;
     max-width: 164px;
   }
 
   .project__arrows {
     top: 20%;
+  }
+
+  .project__img {
+    max-width: 193px;
   }
 
   /***************************contacts***************************/
@@ -1318,6 +1339,16 @@
 
   .footer__item:not(:last-child) {
     margin-right: 30px;
+  }
+
+  .footer__logo {
+    width: auto;
+    height: auto;
+    transform: translateY(0);
+  }
+
+  .socials__item_margin-right:not(:last-child) {
+    margin-right: 20px;
   }
 }
 @media (max-width: 550px) {

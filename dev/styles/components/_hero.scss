@@ -12,7 +12,7 @@
   position: absolute;
   z-index: 1;
   height: 100%;
-  animation: heroAnimation 2s infinite alternate;
+  animation: heroAnimation 8s infinite alternate;
 }
 
 .hero__track {
@@ -32,7 +32,6 @@
   flex-shrink: 0;
   height: 100%;
   width: 100%;
-  //animation: heroAnimation 2s infinite alternate;
 }
 
 @keyframes heroAnimation {
@@ -40,7 +39,7 @@
     transform: scale(1);
   }
 
-  20% {
+  10% {
     transform: scale(1);
   }
 

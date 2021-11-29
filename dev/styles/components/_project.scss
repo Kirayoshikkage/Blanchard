@@ -16,6 +16,7 @@
 }
 
 .project__img {
+  max-width: 448px;
   opacity: 0.5;
   filter: grayscale(100%);
 }
@@ -37,6 +38,7 @@
 
 .project__slide {
   flex-shrink: 0;
+  border: 1px solid #CACACA;
 }
 
 .project__slide:not(:nth-child(3n)) {
